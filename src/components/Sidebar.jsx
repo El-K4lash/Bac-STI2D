@@ -1,5 +1,7 @@
+import { useRef } from 'react'
 import { getDaysLeft } from '../utils/constants'
 import { requestNotifPermission } from '../utils/notifications'
+import { getDBKey } from '../hooks/useDB'
 import db from '../../data/db.json'
 
 function getTomorrow() {
@@ -23,10 +25,37 @@ const NAV = [
   { id: 'stats',      label: 'Mes stats',         icon: '📊' },
 ]
 
-export default function Sidebar({ page, setPage, dueCount, fichesRevCount, erreursCount, userDB, currentUser, onLogout }) {
+export default function Sidebar({ page, setPage, dueCount, fichesRevCount, erreursCount, userDB, currentUser, onLogout, isOpen, onClose }) {
   const { db, updateDB } = userDB
   const daysLeft = getDaysLeft()
   const toggleDark = () => updateDB(d => { d.darkMode = !d.darkMode })
+  const importRef = useRef(null)
+
+  const exportData = () => {
+    const data = localStorage.getItem(getDBKey(currentUser))
+    if (!data) return
+    const blob = new Blob([data], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `bac-stats-${currentUser}.json`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
+  const importData = (e) => {
+    const file = e.target.files[0]
+    if (!file) return
+    const reader = new FileReader()
+    reader.onload = (ev) => {
+      try {
+        const parsed = JSON.parse(ev.target.result)
+        localStorage.setItem(getDBKey(currentUser), JSON.stringify(parsed))
+        window.location.reload()
+      } catch { alert('Fichier invalide') }
+    }
+    reader.readAsText(file)
+  }
 
   const toggleNotif = async () => {
     if (db.notifEnabled) {
@@ -51,7 +80,20 @@ export default function Sidebar({ page, setPage, dueCount, fichesRevCount, erreu
   const badges = { dueCount, fichesRevCount, erreursCount }
 
   return (
-    <aside className="w-56 shrink-0 flex flex-col h-full bg-white dark:bg-gray-900 border-r border-gray-100 dark:border-gray-800">
+    <>
+      {/* Overlay backdrop on mobile */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/40 z-20 md:hidden"
+          onClick={onClose}
+        />
+      )}
+    <aside className={`
+      w-56 shrink-0 flex flex-col h-full bg-white dark:bg-gray-900 border-r border-gray-100 dark:border-gray-800
+      fixed md:static inset-y-0 left-0 z-30
+      transition-transform duration-200
+      ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+    `}>
       {/* Logo */}
       <div className="px-4 pt-5 pb-4 border-b border-gray-100 dark:border-gray-800">
         <div className="flex items-center gap-2.5 mb-3">
@@ -128,6 +170,19 @@ export default function Sidebar({ page, setPage, dueCount, fichesRevCount, erreu
 
       {/* Footer */}
       <div className="p-2 border-t border-gray-100 dark:border-gray-800 space-y-0.5">
+        <div className="flex gap-1 mb-1">
+          <button onClick={exportData}
+            className="flex-1 flex items-center justify-center gap-1 px-2 py-1.5 rounded-lg text-xs text-gray-500 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 transition-all"
+            title="Exporter mes stats">
+            <span>⬇</span><span>Export</span>
+          </button>
+          <button onClick={() => importRef.current?.click()}
+            className="flex-1 flex items-center justify-center gap-1 px-2 py-1.5 rounded-lg text-xs text-gray-500 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 transition-all"
+            title="Importer des stats">
+            <span>⬆</span><span>Import</span>
+          </button>
+          <input ref={importRef} type="file" accept=".json" className="hidden" onChange={importData} />
+        </div>
         <button onClick={toggleNotif}
           className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-all">
           <span className="text-base">{db.notifEnabled ? '🔔' : '🔕'}</span>
@@ -140,5 +195,6 @@ export default function Sidebar({ page, setPage, dueCount, fichesRevCount, erreu
         </button>
       </div>
     </aside>
+    </>
   )
 }

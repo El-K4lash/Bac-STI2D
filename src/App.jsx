@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import Sidebar from './components/Sidebar'
 import Dashboard from './components/Dashboard'
 import Fiches from './components/Fiches'
@@ -40,6 +40,7 @@ function AppInner({ currentUser, onLogout }) {
   const tomorrow = getTomorrow()
   const examTomorrow = db.meta.examens.find(e => e.date === tomorrow || e.date === TODAY_STR)
   const [page, setPage] = useState(examTomorrow ? 'veille' : 'dashboard')
+  const [sidebarOpen, setSidebarOpen] = useState(false)
   const userDB = useDB(currentUser)
   const { db: udb } = userDB
 
@@ -160,19 +161,36 @@ function AppInner({ currentUser, onLogout }) {
   }
   const Page = pages[page] || Dashboard
 
+  const handleSetPage = (p) => {
+    setPage(p)
+    setSidebarOpen(false)
+  }
+
   return (
     <div className="flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-950">
       <Sidebar
-        page={page} setPage={setPage}
+        page={page} setPage={handleSetPage}
         dueCount={dueCount}
         fichesRevCount={fichesRevCount}
         erreursCount={erreursCount}
         userDB={userDB}
         currentUser={currentUser}
         onLogout={onLogout}
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
       />
       <main className="flex-1 overflow-y-auto">
-        <Page userDB={userDB} dbData={db} setPage={setPage} />
+        {/* Hamburger button — mobile only */}
+        <div className="md:hidden flex items-center px-4 pt-4 pb-2">
+          <button
+            onClick={() => setSidebarOpen(true)}
+            className="p-2 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            aria-label="Ouvrir le menu"
+          >
+            <span className="text-xl leading-none">☰</span>
+          </button>
+        </div>
+        <Page userDB={userDB} dbData={db} setPage={handleSetPage} />
       </main>
     </div>
   )
