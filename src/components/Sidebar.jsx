@@ -58,8 +58,15 @@ export default function Sidebar({ page, setPage, dueCount, fichesRevCount, erreu
   }
 
   const toggleNotif = async () => {
+    if (db.notifEnabled) {
+      updateDB(d => { d.notifEnabled = false })
+      return
+    }
+    if (!('Notification' in window)) { alert('Notifications non supportées par ce navigateur.'); return }
+    if (Notification.permission === 'denied') { alert('Notifications bloquées. Va dans les paramètres de ton navigateur pour les autoriser.'); return }
     const granted = await requestNotifPermission()
-    if (granted) updateDB(d => { d.notifEnabled = !d.notifEnabled })
+    if (granted) updateDB(d => { d.notifEnabled = true })
+    else alert('Permission refusée. Active les notifications dans les paramètres du navigateur.')
   }
 
   const urgency = daysLeft <= 7 ? 'red' : daysLeft <= 14 ? 'orange' : daysLeft <= 21 ? 'yellow' : 'green'

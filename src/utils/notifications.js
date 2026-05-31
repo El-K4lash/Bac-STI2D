@@ -11,7 +11,7 @@ export async function requestNotifPermission() {
 
 export function sendNotif(title, body, icon = '📚') {
   if (!('Notification' in window) || Notification.permission !== 'granted') return
-  new Notification(`${icon} ${title}`, { body, icon: '/vite.svg' })
+  new Notification(`${icon} ${title}`, { body, icon: '/Bac-STI2D/favicon.svg' })
 }
 
 /**
