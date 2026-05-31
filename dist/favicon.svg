@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Fond arrondi -->
-  <rect width="64" height="64" rx="14" fill="#1e1e2e"/>
-  <!-- Lettre B stylisée pour BAC -->
-  <text x="8" y="46" font-family="'Segoe UI', system-ui, sans-serif" font-size="40" font-weight="900" fill="#6366f1">B</text>
-  <!-- Petit carré accent en bas à droite -->
-  <rect x="38" y="42" width="18" height="14" rx="4" fill="#f59e0b"/>
-  <text x="40" y="54" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="900" fill="#1e1e2e">STI</text>
-</svg>
