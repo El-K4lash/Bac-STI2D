@@ -72,15 +72,30 @@ function fmt(sec) {
 }
 
 export default function GrandOral({ userDB }) {
-  const [tab, setTab] = useState('plan') // plan | entrainement | questions | notes
-  const [timerSec, setTimerSec] = useState(5 * 60) // 5 min exposé
+  const [tab, setTab] = useState('plan')
+  const [timerSec, setTimerSec] = useState(5 * 60)
   const [running, setRunning] = useState(false)
-  const [phase, setPhase] = useState('expose') // expose | echange
+  const [phase, setPhase] = useState('expose')
   const [notes, setNotes] = useState(userDB.db.goNotes || '')
   const [selectedQ, setSelectedQ] = useState(null)
   const [qNotes, setQNotes] = useState(userDB.db.goQNotes || {})
   const [repCount, setRepCount] = useState(userDB.db.goRepetitions || 0)
+  const [editingSection, setEditingSection] = useState(null) // clé de section en cours d'édition
+  const [editingSujet, setEditingSujet] = useState(false)
   const ref = useRef(null)
+
+  // Plan éditable : depuis userDB ou plan par défaut
+  const plan = userDB.db.goPlan || PLAN
+  const sujet = userDB.db.goSujet || SUJET
+
+  const savePlanSection = (key, field, value) => {
+    const newPlan = { ...plan, [key]: { ...plan[key], [field]: value } }
+    userDB.updateDB(d => { d.goPlan = newPlan })
+  }
+
+  const saveSujet = (value) => {
+    userDB.updateDB(d => { d.goSujet = value })
+  }
 
   useEffect(() => {
     if (!running) return
@@ -143,9 +158,23 @@ export default function GrandOral({ userDB }) {
       {/* Header */}
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Grand Oral</h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
-          Sujet : <span className="font-medium text-gray-700 dark:text-gray-300">« {SUJET} »</span>
-        </p>
+        <div className="flex items-start gap-2 mt-0.5">
+          {editingSujet ? (
+            <div className="flex-1 flex gap-2">
+              <input defaultValue={sujet} id="sujet-input" autoFocus
+                className="flex-1 text-sm border border-yellow-400/50 rounded-lg px-3 py-1.5 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+              <button onClick={() => { saveSujet(document.getElementById('sujet-input').value); setEditingSujet(false) }}
+                className="px-3 py-1.5 rounded-lg text-xs bg-yellow-500 text-white font-semibold">✓</button>
+              <button onClick={() => setEditingSujet(false)}
+                className="px-3 py-1.5 rounded-lg text-xs bg-gray-100 dark:bg-gray-800 text-gray-500">✗</button>
+            </div>
+          ) : (
+            <p className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-2">
+              Sujet : <span className="font-medium text-gray-700 dark:text-gray-300">« {sujet} »</span>
+              <button onClick={() => setEditingSujet(true)} className="text-gray-400 hover:text-yellow-400 transition-colors text-xs">✏️</button>
+            </p>
+          )}
+        </div>
         <div className="flex items-center gap-4 mt-2 text-xs text-gray-400">
           <span>📅 23 juin 2026 · 8h00</span>
           <span>⏱ 20 min prépa · 5 min exposé · 10 min échange jury</span>
@@ -170,13 +199,47 @@ export default function GrandOral({ userDB }) {
       {/* ── Plan ── */}
       {tab === 'plan' && (
         <div className="space-y-4">
-          {Object.entries(PLAN).map(([key, section]) => (
+          {Object.entries(plan).map(([key, section]) => (
             <div key={key} className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
-              <div className="px-5 py-3 bg-yellow-50 dark:bg-yellow-900/20 border-b border-yellow-100 dark:border-yellow-800">
-                <h3 className="font-bold text-yellow-800 dark:text-yellow-200 text-sm">{section.titre}</h3>
+              <div className="px-5 py-3 bg-yellow-50 dark:bg-yellow-900/20 border-b border-yellow-100 dark:border-yellow-800 flex items-center justify-between">
+                {editingSection === `${key}-titre` ? (
+                  <div className="flex-1 flex gap-2">
+                    <input defaultValue={section.titre} id={`titre-${key}`} autoFocus
+                      className="flex-1 text-sm border border-yellow-400/50 rounded-lg px-2 py-1 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 focus:outline-none" />
+                    <button onClick={() => { savePlanSection(key, 'titre', document.getElementById(`titre-${key}`).value); setEditingSection(null) }}
+                      className="px-2 py-1 rounded-lg text-xs bg-yellow-500 text-white">✓</button>
+                    <button onClick={() => setEditingSection(null)}
+                      className="px-2 py-1 rounded-lg text-xs bg-gray-100 dark:bg-gray-700 text-gray-500">✗</button>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-2 flex-1">
+                    <h3 className="font-bold text-yellow-800 dark:text-yellow-200 text-sm">{section.titre}</h3>
+                    <button onClick={() => setEditingSection(`${key}-titre`)} className="text-yellow-400/60 hover:text-yellow-400 text-xs">✏️</button>
+                  </div>
+                )}
               </div>
-              <div className="px-5 py-4 text-sm text-gray-700 dark:text-gray-300 whitespace-pre-wrap leading-relaxed">
-                {section.contenu}
+              <div className="px-5 py-4">
+                {editingSection === key ? (
+                  <div className="space-y-2">
+                    <textarea defaultValue={section.contenu} id={`contenu-${key}`} autoFocus
+                      rows={8}
+                      className="w-full text-sm border border-yellow-400/50 rounded-xl px-3 py-2 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 resize-y focus:outline-none focus:ring-2 focus:ring-yellow-400 font-mono leading-relaxed" />
+                    <div className="flex gap-2">
+                      <button onClick={() => { savePlanSection(key, 'contenu', document.getElementById(`contenu-${key}`).value); setEditingSection(null) }}
+                        className="px-4 py-2 rounded-xl text-sm bg-yellow-500 hover:bg-yellow-600 text-white font-semibold transition-colors">✓ Sauvegarder</button>
+                      <button onClick={() => setEditingSection(null)}
+                        className="px-4 py-2 rounded-xl text-sm bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 transition-colors">Annuler</button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="group relative">
+                    <div className="text-sm text-gray-700 dark:text-gray-300 whitespace-pre-wrap leading-relaxed">{section.contenu}</div>
+                    <button onClick={() => setEditingSection(key)}
+                      className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity text-xs text-gray-400 hover:text-yellow-400 bg-white dark:bg-gray-900 px-2 py-1 rounded-lg border border-gray-200 dark:border-gray-700">
+                      ✏️ Modifier
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           ))}
