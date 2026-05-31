@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+
+  body {
+    @apply bg-slate-50 text-gray-900 antialiased;
+  }
+  .dark body {
+    @apply bg-gray-950 text-gray-100;
+  }
+}
+
+/* Scrollbar slim */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { @apply bg-transparent; }
+::-webkit-scrollbar-thumb { @apply bg-gray-300 rounded-full; }
+.dark ::-webkit-scrollbar-thumb { @apply bg-gray-700; }
+
+/* Card flip */
+.flip-card { perspective: 1200px; }
+.flip-inner { transform-style: preserve-3d; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+.flip-inner.flipped { transform: rotateY(180deg); }
+.flip-face { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.flip-back { transform: rotateY(180deg); }
+
+/* Smooth page transitions */
+main > div { animation: fadeIn 0.15s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+/* Keyboard badge */
+kbd {
+  @apply text-xs px-1.5 py-0.5 rounded font-mono;
+  @apply bg-gray-100 text-gray-600 border border-gray-200;
+  @apply dark:bg-gray-800 dark:text-gray-400 dark:border-gray-700;
+}

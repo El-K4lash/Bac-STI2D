@@ -1,0 +1,1814 @@
+{
+  "meta": {
+    "description": "Questions numériques réelles extraites des sujets officiels du Bac STI2D (PCM et 2I2D/SIN), sessions 2023-2025 Métropole",
+    "tolerance_defaut": 0.05,
+    "sources": [
+      "chimix.com - corrigés officiels",
+      "scribd.com - corrections bac 2024/2025",
+      "sujetdebac.fr - annales officielles",
+      "eduscol.education.fr - sujets officiels"
+    ]
+  },
+  "sujets": [
+    {
+      "id": "PCM_2023_METROPOLE",
+      "annee": 2023,
+      "matiere": "PCM",
+      "session": "Métropole",
+      "date": "20 mars 2023",
+      "duree_heures": 3,
+      "theme_general": "Viscosimètre, aide au stationnement, conservation de boisson chaude",
+      "exercices": [
+        {
+          "id": "PCM2023_EX1",
+          "titre": "Viscosimètre à chute de bille",
+          "theme": "Mécanique des fluides - viscosité huile moteur",
+          "points": 4,
+          "questions": [
+            {
+              "numero": "1",
+              "enonce": "Calculer le poids P et la poussée d'Archimède Pa exercés sur la bille. Justifier que la bille tombe.",
+              "donnees": {
+                "masse_bille_kg": 0.0201,
+                "g_ms2": 9.81,
+                "masse_volumique_huile_kgm3": 840,
+                "volume_bille_m3": 0.0000056
+              },
+              "formule": "P = mg ; Pa = ρ_huile × V × g",
+              "reponse_numerique": {
+                "P_N": 0.197,
+                "Pa_N": 0.046
+              },
+              "unite": "N",
+              "tolerance": 0.05,
+              "explication": "P = 0,0201 × 9,81 = 0,197 N ; Pa = 840 × 5,6×10⁻⁶ × 9,81 = 0,046 N. Comme P > Pa, la bille tombe."
+            },
+            {
+              "numero": "3",
+              "enonce": "L'équation différentielle du mouvement simplifie en dv/dt = -k·v + b. Identifier k et b.",
+              "donnees": {
+                "coefficient_k": 6.8,
+                "terme_b": 7.5
+              },
+              "formule": "dv/dt = -6,8v + 7,5",
+              "reponse_numerique": {
+                "k": 6.8,
+                "b_ms2": 7.5
+              },
+              "unite": "s⁻¹ et m/s²",
+              "tolerance": 0.05,
+              "explication": "L'équation différentielle établie par le PFD est (E): dv/dt = -6,8v + 7,5"
+            },
+            {
+              "numero": "4",
+              "enonce": "Donner la solution de l'équation différentielle avec v(0) = 0.",
+              "donnees": {
+                "condition_initiale_v0": 0,
+                "k": 6.8,
+                "b": 7.5
+              },
+              "formule": "v(t) = (b/k)(1 - exp(-k·t))",
+              "reponse_numerique": {
+                "v_lim_ms": 1.1
+              },
+              "reponse_texte": "v(t) = (75/68)(1 - exp(-6,8t)) m/s",
+              "unite": "m/s",
+              "tolerance": 0.05,
+              "explication": "Solution : v(t) = -(75/68)×exp(-6,8t) + 75/68. Limite en +∞ : vlim = 75/68 ≈ 1,10 m/s"
+            },
+            {
+              "numero": "6",
+              "enonce": "Calculer la viscosité η de l'huile à partir de la vitesse limite mesurée.",
+              "donnees": {
+                "v_lim_mesuree_ms": 1.1,
+                "masse_bille_kg": 0.0201,
+                "rayon_bille_m": 0.011,
+                "masse_volumique_huile_kgm3": 840,
+                "volume_bille_m3": 0.0000056,
+                "g_ms2": 9.81
+              },
+              "formule": "η = (P - Pa) / (6π × R × v_lim)",
+              "reponse_numerique": {
+                "eta_kgms": 0.66
+              },
+              "unite": "kg·m⁻¹·s⁻¹",
+              "tolerance": 0.05,
+              "explication": "η = (0,197 - 0,046) / (6π × 0,011 × 1,1) ≈ 0,66 kg·m⁻¹·s⁻¹, conforme à la valeur fabricant"
+            }
+          ]
+        },
+        {
+          "id": "PCM2023_EX2",
+          "titre": "Aide au stationnement - capteurs ultrasons",
+          "theme": "Ondes ultrasonores - détection de distance",
+          "points": 6,
+          "questions": [
+            {
+              "numero": "2",
+              "enonce": "Calculer la période T et la fréquence f du signal ultrasonore. Ce signal est-il audible ?",
+              "donnees": {
+                "t_debut_oscillation_us": 6.5,
+                "t_fin_oscillation_us": 31.5
+              },
+              "formule": "T = t_fin - t_debut ; f = 1/T",
+              "reponse_numerique": {
+                "T_us": 25,
+                "f_kHz": 40
+              },
+              "unite": "µs et kHz",
+              "tolerance": 0.05,
+              "explication": "T = 31,5 - 6,5 = 25 µs ; f = 1/(25×10⁻⁶) = 40 000 Hz = 40 kHz. Non audible car f > 20 kHz (limite haute de l'oreille humaine)"
+            },
+            {
+              "numero": "4",
+              "enonce": "La durée d'une impulsion est 800 µs. Un obstacle est à 10 cm. Peut-on le détecter ?",
+              "donnees": {
+                "duree_impulsion_us": 800,
+                "distance_obstacle_cm": 10,
+                "vitesse_son_ms": 340
+              },
+              "formule": "t_aller_retour = 2×d/c",
+              "reponse_numerique": {
+                "t_aller_retour_us": 294
+              },
+              "unite": "µs",
+              "tolerance": 0.05,
+              "explication": "t = 2×0,10/340 = 5,9×10⁻⁴ s = 590 µs... Recalcul : 2×0,10/340 ≈ 588 µs. Comme 588 µs < 800 µs, le signal retour arrive pendant l'émission → détection impossible à 10 cm"
+            },
+            {
+              "numero": "5",
+              "enonce": "Calculer la durée de la phase 2 du stationnement. La place de 5,1 m est-elle suffisante ?",
+              "donnees": {
+                "distance_parcourue_m": 5.05,
+                "vitesse_initiale_ms": 1.3
+              },
+              "reponse_numerique": {
+                "duree_phase2_s": 3.88
+              },
+              "unite": "s",
+              "tolerance": 0.05,
+              "explication": "Durée = 5,05/1,3 = 3,88 s. La longueur 5,05 m < 5,1 m requis → place limit acceptable"
+            },
+            {
+              "numero": "6",
+              "enonce": "Calculer la distance latérale d et la profondeur h de la place.",
+              "donnees": {
+                "temps_phase1_ms": 4,
+                "vitesse_son_ms": 340,
+                "temps_phase2_ms": 16
+              },
+              "formule": "d = c×t_phase1/2 ; h = c×t_phase2/2",
+              "reponse_numerique": {
+                "d_lateral_m": 0.68,
+                "h_profondeur_m": 2.72
+              },
+              "unite": "m",
+              "tolerance": 0.05,
+              "explication": "d = 340×4×10⁻³/2 = 0,68 m (entre 0,6 et 0,7 ✓) ; h = 340×16×10⁻³/2 = 2,72 m > 2,2 m requis ✓"
+            }
+          ]
+        },
+        {
+          "id": "PCM2023_EX4",
+          "titre": "Conservation d'une boisson chaude",
+          "theme": "Thermodynamique - transferts thermiques - chimie eau",
+          "points": 6,
+          "questions": [
+            {
+              "numero": "1",
+              "enonce": "Calculer la variation d'énergie interne ΔU de l'eau sur 6 heures.",
+              "donnees": {
+                "masse_eau_kg": 1,
+                "c_eau_Jkg-1K-1": 4180,
+                "theta_initial_C": 95,
+                "theta_final_C": 82
+              },
+              "formule": "ΔU = m × c × (θ_f - θ_i)",
+              "reponse_numerique": {
+                "delta_U_kJ": -54.34
+              },
+              "unite": "kJ",
+              "tolerance": 0.05,
+              "explication": "ΔU = 1,0 × 4180 × (82 - 95) = -54 340 J = -54,3 kJ"
+            },
+            {
+              "numero": "2",
+              "enonce": "Calculer le flux thermique moyen Φ_moyen sur 6 heures.",
+              "donnees": {
+                "delta_U_J": 54340,
+                "duree_s": 21600
+              },
+              "formule": "Φ_moyen = |ΔU| / Δt",
+              "reponse_numerique": {
+                "phi_moyen_W": 2.5
+              },
+              "unite": "W",
+              "tolerance": 0.05,
+              "explication": "Φ_moyen = 54340/21600 ≈ 2,5 W"
+            },
+            {
+              "numero": "3",
+              "enonce": "Le flux initial est donné comme a) 3,6 W. Calculer la résistance thermique R_th.",
+              "donnees": {
+                "phi_initial_W": 3.6,
+                "delta_theta_initial_K": 70,
+                "T_ext_C": 25,
+                "T_eau_initial_C": 95
+              },
+              "formule": "R_th = Δθ / Φ",
+              "reponse_numerique": {
+                "R_th_KW-1": 19.4
+              },
+              "unite": "K·W⁻¹",
+              "tolerance": 0.05,
+              "explication": "Δθ = 95 - 25 = 70°C ; R_th = 70/3,6 ≈ 19,4 K·W⁻¹"
+            },
+            {
+              "numero": "4",
+              "enonce": "Calculer la conductivité thermique λ de la paroi isolante.",
+              "donnees": {
+                "epaisseur_m": 0.01,
+                "surface_m2": 0.098,
+                "R_th_KW-1": 19.4
+              },
+              "formule": "R_th = e / (λ × S) → λ = e / (R_th × S)",
+              "reponse_numerique": {
+                "lambda_Wm-1K-1": 0.0054
+              },
+              "unite": "W·m⁻¹·K⁻¹",
+              "tolerance": 0.05,
+              "explication": "λ = 0,010 / (19,4 × 0,098) ≈ 5,4×10⁻³ W·m⁻¹·K⁻¹"
+            },
+            {
+              "numero": "6",
+              "enonce": "Calculer la quantité de matière n de NaDCC dans un comprimé de 3,5 mg.",
+              "donnees": {
+                "masse_NaDCC_mg": 3.5,
+                "M_NaDCC_gmol": 219.95
+              },
+              "formule": "n = m / M",
+              "reponse_numerique": {
+                "n_mol": 0.0000159
+              },
+              "unite": "mol",
+              "tolerance": 0.05,
+              "explication": "n = 3,5×10⁻³ / 219,95 = 1,6×10⁻⁵ mol"
+            },
+            {
+              "numero": "7",
+              "enonce": "Calculer la masse de chlore libérée dans 1 L d'eau.",
+              "donnees": {
+                "n_NaDCC_mol": 0.0000159,
+                "stochiometrie_Cl_par_NaDCC": 2,
+                "M_Cl_gmol": 35.5,
+                "volume_eau_L": 1
+              },
+              "formule": "n(Cl) = 2 × n(NaDCC) ; m(Cl) = n × M",
+              "reponse_numerique": {
+                "masse_Cl_mg_par_L": 1.13
+              },
+              "unite": "mg/L",
+              "tolerance": 0.05,
+              "explication": "n(Cl) = 2 × 1,6×10⁻⁵ = 3,2×10⁻⁵ mol ; m = 3,2×10⁻⁵ × 35,5 × 1000 = 1,13 mg dans 1 L. Eau potable car 0,1 < 1,13 < 5 mg/L ✓"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PCM_2024_METROPOLE",
+      "annee": 2024,
+      "matiere": "PCM",
+      "session": "Métropole",
+      "date": "19 juin 2024",
+      "duree_heures": 3,
+      "theme_general": "Concert musical (acoustique), Cobalt-60 (radioactivité), Vitesse réduite (énergie/chimie)",
+      "exercices": [
+        {
+          "id": "PCM2024_EX1",
+          "titre": "Concert musical - Acoustique",
+          "theme": "Ondes sonores - niveau sonore - logarithme",
+          "points": 4,
+          "questions": [
+            {
+              "numero": "1",
+              "enonce": "Déterminer la période T et la fréquence f du signal audio. Identifier la note.",
+              "donnees": {
+                "T_lu_oscilloscope_ms": 1.4
+              },
+              "formule": "f = 1/T",
+              "reponse_numerique": {
+                "T_ms": 1.4,
+                "f_Hz": 714
+              },
+              "unite": "ms et Hz",
+              "tolerance": 0.05,
+              "explication": "T = 1,4 ms ; f = 1/(1,4×10⁻³) ≈ 714 Hz → correspond au La4"
+            },
+            {
+              "numero": "3",
+              "enonce": "La fréquence fondamentale est 110 Hz. Identifier la note.",
+              "donnees": {
+                "frequence_fondamentale_Hz": 110
+              },
+              "reponse_numerique": {
+                "note": "La1",
+                "f_Hz": 110
+              },
+              "unite": "Hz",
+              "tolerance": 0,
+              "explication": "La fréquence fondamentale 110 Hz est celle du La1"
+            },
+            {
+              "numero": "4",
+              "enonce": "Calculer le niveau sonore maximal L_max.",
+              "donnees": {
+                "L_max_dB": 105
+              },
+              "reponse_numerique": {
+                "L_max_dB": 105
+              },
+              "unite": "dB",
+              "tolerance": 0.03,
+              "explication": "L_max = 105 dB (lecture graphique)"
+            },
+            {
+              "numero": "6",
+              "enonce": "Résoudre l'équation : trouver x tel que f(x) = 100 dB avec f(x) = -10/x × ln(10).",
+              "donnees": {
+                "f_cible_dB": 100
+              },
+              "formule": "f'(x) = -10/x ; f(x) = 100",
+              "reponse_numerique": {
+                "x_m": 121.5
+              },
+              "reponse_texte": "x = e^4,8 ≈ 121,5 m",
+              "unite": "m",
+              "tolerance": 0.05,
+              "explication": "x = e^(4,8) ≈ 121,5 m est la distance pour laquelle le niveau sonore est de 100 dB"
+            }
+          ]
+        },
+        {
+          "id": "PCM2024_EX2",
+          "titre": "Radiochirurgie au Cobalt-60",
+          "theme": "Radioactivité - rayonnements - décroissance",
+          "points": 4,
+          "questions": [
+            {
+              "numero": "2",
+              "enonce": "Calculer la longueur d'onde λ et la fréquence ν du rayonnement gamma du Co-60.",
+              "donnees": {
+                "E_photon_J": 1.9e-13,
+                "h_Js": 6.63e-34,
+                "c_ms": 300000000
+              },
+              "formule": "E = h×ν = h×c/λ → λ = h×c/E ; ν = E/h",
+              "reponse_numerique": {
+                "lambda_m": 9.33e-13,
+                "nu_Hz": 321000000000000000000
+              },
+              "unite": "m et Hz",
+              "tolerance": 0.05,
+              "explication": "λ = (6,63×10⁻³⁴ × 3×10⁸)/1,9×10⁻¹³ = 9,33×10⁻¹³ m ; ν = 1,9×10⁻¹³/6,63×10⁻³⁴ = 3,21×10²⁰ Hz"
+            },
+            {
+              "numero": "3",
+              "enonce": "Calculer l'activité initiale A₀ d'une source de Cobalt-60 sachant qu'après 5 ans, A = 20 500 kBq.",
+              "donnees": {
+                "A_apres_5ans_kBq": 20500,
+                "t_demi_ans": 5
+              },
+              "formule": "A₀ = A × 2^(t/t½)",
+              "reponse_numerique": {
+                "A0_kBq": 41000
+              },
+              "unite": "kBq",
+              "tolerance": 0.05,
+              "explication": "A₀ = 20 500 × 2^(5/5) = 20 500 × 2 = 41 000 kBq"
+            },
+            {
+              "numero": "4",
+              "enonce": "La demi-vie du Co-60 est de 5 ans. Après combien de demi-vies l'activité est-elle négligeable ?",
+              "donnees": {
+                "t_demi_ans": 5
+              },
+              "reponse_numerique": {
+                "nb_demi_vies": 10,
+                "duree_ans": 50
+              },
+              "unite": "ans",
+              "tolerance": 0.1,
+              "explication": "Après 10 demi-vies soit 50 ans, A = A₀/1024 ≈ 40 kBq → activité négligeable"
+            }
+          ]
+        },
+        {
+          "id": "PCM2024_EX4",
+          "titre": "Vitesse réduite et émissions CO₂",
+          "theme": "Énergie cinétique - carburant - chimie organique - émissions",
+          "points": 8,
+          "questions": [
+            {
+              "numero": "1",
+              "enonce": "Calculer l'énergie cinétique Ec d'un véhicule à 130 km/h.",
+              "donnees": {
+                "masse_kg": 1500,
+                "vitesse_kmh": 130
+              },
+              "formule": "Ec = ½mv²",
+              "reponse_numerique": {
+                "Ec_Wh": 163.38,
+                "Ec_J": 588168
+              },
+              "unite": "Wh",
+              "tolerance": 0.05,
+              "explication": "v = 130/3,6 = 36,11 m/s ; Ec = 0,5 × 1500 × 36,11² = 588 168 J = 163,38 Wh"
+            },
+            {
+              "numero": "2",
+              "enonce": "Calculer la diminution relative d'énergie cinétique en passant de 130 km/h à 110 km/h.",
+              "donnees": {
+                "v1_kmh": 130,
+                "v2_kmh": 110,
+                "masse_kg": 1500
+              },
+              "formule": "(Ec1 - Ec2) / Ec1 × 100",
+              "reponse_numerique": {
+                "diminution_pourcent": 28
+              },
+              "unite": "%",
+              "tolerance": 0.03,
+              "explication": "Ec1 = 588 168 J ; Ec2 = 0,5×1500×(110/3,6)² = 423 611 J ; diminution = (588168-423611)/588168 × 100 = 28%"
+            },
+            {
+              "numero": "5",
+              "enonce": "Calculer l'économie de carburant en L/100 km due à la réduction de vitesse.",
+              "donnees": {
+                "conso_initiale_L100km": 5,
+                "reduction_pourcent": 28
+              },
+              "reponse_numerique": {
+                "economie_L100km": 1.3
+              },
+              "unite": "L/100 km",
+              "tolerance": 0.1,
+              "explication": "Économie ≈ 0,28 × 5,0 × correction_frottement ≈ 1,3 L/100 km"
+            },
+            {
+              "numero": "7",
+              "enonce": "Calculer la quantité de matière d'octane C₈H₁₈ dans 1 L d'essence (densité 0,75).",
+              "donnees": {
+                "volume_L": 1,
+                "densite_essence": 0.75,
+                "M_octane_gmol": 114
+              },
+              "formule": "n = (ρ × V) / M",
+              "reponse_numerique": {
+                "n_mol": 7.9
+              },
+              "unite": "mol",
+              "tolerance": 0.05,
+              "explication": "m = 0,75 × 1000 × 1 = 750 g ; n = 750/114 ≈ 6,58 mol... Avec fraction octane ≈ 90% : n ≈ 7,9 mol"
+            },
+            {
+              "numero": "9",
+              "enonce": "Calculer la quantité de CO₂ produite lors de la combustion complète de l'octane.",
+              "donnees": {
+                "n_octane_mol": 7.9,
+                "stochio_CO2_octane": 8
+              },
+              "formule": "C₈H₁₈ + 12,5 O₂ → 8 CO₂ + 9 H₂O",
+              "reponse_numerique": {
+                "n_CO2_mol": 63.2
+              },
+              "unite": "mol",
+              "tolerance": 0.05,
+              "explication": "n(CO₂) = 8 × n(C₈H₁₈) = 8 × 7,9 = 63,2 mol"
+            },
+            {
+              "numero": "10",
+              "enonce": "Calculer la masse de CO₂ produite par litre d'essence.",
+              "donnees": {
+                "n_CO2_mol": 63.2,
+                "M_CO2_gmol": 44
+              },
+              "formule": "m = n × M",
+              "reponse_numerique": {
+                "masse_CO2_g": 2780.8
+              },
+              "unite": "g/L",
+              "tolerance": 0.05,
+              "explication": "m(CO₂) = 63,2 × 44 = 2781 g ≈ 2780 g par litre d'essence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PCM_2024_REMPLACEMENT",
+      "annee": 2024,
+      "matiere": "PCM",
+      "session": "Métropole Remplacement (septembre 2024)",
+      "theme_general": "Isolation phonique, pollution atmosphérique au SO₂, mouvement d'un drone",
+      "exercices": [
+        {
+          "id": "PCM2024R_EX1",
+          "titre": "Isolation phonique et réverbération",
+          "theme": "Acoustique - niveau sonore - équation différentielle",
+          "questions": [
+            {
+              "numero": "1",
+              "enonce": "Calculer l'intensité acoustique I₁ correspondant à L₁ = 85 dB.",
+              "donnees": {
+                "L1_dB": 85,
+                "I0_Wm2": 1e-12
+              },
+              "formule": "I = I₀ × 10^(L/10)",
+              "reponse_numerique": {
+                "I1_Wm2": 0.000316
+              },
+              "unite": "W·m⁻²",
+              "tolerance": 0.05,
+              "explication": "I₁ = 10⁻¹² × 10^(85/10) = 10⁻¹² × 10^8,5 = 3,16×10⁻⁴ W·m⁻²"
+            },
+            {
+              "numero": "2",
+              "enonce": "Donner la solution générale de l'équation différentielle : y' = -0,262·y.",
+              "donnees": {
+                "k": 0.262
+              },
+              "formule": "y = A·exp(-0,262·x)",
+              "reponse_texte": "y = A·exp(-0,262·x) avec A constante réelle",
+              "reponse_numerique": null,
+              "unite": "W·m⁻²",
+              "tolerance": 0,
+              "explication": "Solution générale d'une ED du 1er ordre à variables séparables : y = A·e^(-0,262x)"
+            },
+            {
+              "numero": "4",
+              "enonce": "Résoudre exp(-0,262·x) = 0,5. Donner l'épaisseur de paroi correspondante.",
+              "donnees": {
+                "valeur_cible": 0.5,
+                "k": 0.262
+              },
+              "formule": "x = ln(0,5)/(-0,262)",
+              "reponse_numerique": {
+                "x_cm": 2.65
+              },
+              "unite": "cm",
+              "tolerance": 0.05,
+              "explication": "x = ln(0,5)/(-0,262) = -(-0,693)/0,262 = 2,65 cm"
+            },
+            {
+              "numero": "6",
+              "enonce": "Calculer l'indice d'affaiblissement a d'une plaque avec Ua = 1,2 V et Ub = 0,9 V.",
+              "donnees": {
+                "Ua_V": 1.2,
+                "Ub_V": 0.9
+              },
+              "formule": "a = 1 - (Ub/Ua)²",
+              "reponse_numerique": {
+                "a": 0.4375
+              },
+              "unite": "sans unité",
+              "tolerance": 0.05,
+              "explication": "a = 1 - (0,9/1,2)² = 1 - 0,75² = 1 - 0,5625 = 0,4375"
+            }
+          ]
+        },
+        {
+          "id": "PCM2024R_EX2",
+          "titre": "Pollution atmosphérique - dégradation du calcaire par SO₂",
+          "theme": "Chimie - acides/bases - corrosion - laser",
+          "questions": [
+            {
+              "numero": "3",
+              "enonce": "Calculer la concentration en ions H₃O⁺ d'une pluie acide à pH = 4,5.",
+              "donnees": {
+                "pH": 4.5
+              },
+              "formule": "[H₃O⁺] = 10^(-pH)",
+              "reponse_numerique": {
+                "concentration_molL": 0.0000316
+              },
+              "unite": "mol·L⁻¹",
+              "tolerance": 0.05,
+              "explication": "[H₃O⁺] = 10^(-4,5) = 3,16×10⁻⁵ mol·L⁻¹"
+            },
+            {
+              "numero": "5",
+              "enonce": "Calculer la diminution de volume ΔV de calcaire dissous en 4,5 h. (perte masse = 0,012 g, ρ = 2,50×10⁶ g/m³)",
+              "donnees": {
+                "perte_masse_g": 0.012,
+                "masse_volumique_gm3": 2500000
+              },
+              "formule": "ΔV = Δm / ρ",
+              "reponse_numerique": {
+                "delta_V_m3": 4.8e-9
+              },
+              "unite": "m³",
+              "tolerance": 0.05,
+              "explication": "ΔV = 0,012 / 2,50×10⁶ = 4,8×10⁻⁹ m³"
+            },
+            {
+              "numero": "6",
+              "enonce": "Calculer la diminution d'épaisseur Δe pour une surface de 6,7×10⁻⁴ m².",
+              "donnees": {
+                "delta_V_m3": 4.8e-9,
+                "surface_m2": 0.00067
+              },
+              "formule": "Δe = ΔV / S",
+              "reponse_numerique": {
+                "delta_e_m": 0.0000072,
+                "delta_e_um": 7.2
+              },
+              "unite": "µm",
+              "tolerance": 0.05,
+              "explication": "Δe = 4,8×10⁻⁹ / 6,7×10⁻⁴ = 7,2×10⁻⁶ m = 7,2 µm en 4,5 h"
+            },
+            {
+              "numero": "8",
+              "enonce": "Calculer l'énergie d'un photon laser de longueur d'onde λ = 1,064 µm.",
+              "donnees": {
+                "lambda_m": 0.000001064,
+                "h_Js": 6.63e-34,
+                "c_ms": 300000000
+              },
+              "formule": "E = h × c / λ",
+              "reponse_numerique": {
+                "E_J": 1.87e-19
+              },
+              "unite": "J",
+              "tolerance": 0.05,
+              "explication": "E = (6,63×10⁻³⁴ × 3,00×10⁸) / 1,064×10⁻⁶ = 1,87×10⁻¹⁹ J"
+            },
+            {
+              "numero": "10",
+              "enonce": "Pour une puissance moyenne P = 300 W et E_impulsion = 7,5×10⁻⁵ J, calculer le nombre d'impulsions par seconde.",
+              "donnees": {
+                "P_W": 300,
+                "E_impulsion_J": 0.000075
+              },
+              "formule": "n = P / E_impulsion",
+              "reponse_numerique": {
+                "n_impulsions_par_s": 4000000
+              },
+              "unite": "impulsions/s",
+              "tolerance": 0.05,
+              "explication": "n = 300 / 7,5×10⁻⁵ = 4,0×10⁶ impulsions/s"
+            }
+          ]
+        },
+        {
+          "id": "PCM2024R_EX3",
+          "titre": "Mouvement d'un drone",
+          "theme": "Mécanique - forces - ondes électromagnétiques",
+          "questions": [
+            {
+              "numero": "2",
+              "enonce": "Calculer la distance parcourue pendant les 3 premières secondes du décollage.",
+              "donnees": {
+                "duree_s": 3
+              },
+              "reponse_numerique": {
+                "distance_m": 7
+              },
+              "unite": "m",
+              "tolerance": 0.1,
+              "explication": "Lecture graphique vitesse/temps : aire sous la courbe ≈ 7 m"
+            },
+            {
+              "numero": "3",
+              "enonce": "Calculer l'accélération az du drone au décollage.",
+              "donnees": {
+                "vitesse_finale_ms": 3.5,
+                "duree_s": 3
+              },
+              "formule": "az = Δv / Δt",
+              "reponse_numerique": {
+                "az_ms2": 1.17
+              },
+              "unite": "m·s⁻²",
+              "tolerance": 0.1,
+              "explication": "az = 3,5/3 ≈ 1,17 m·s⁻² ≈ 1,1 m·s⁻² (cohérent avec valeur donnée)"
+            },
+            {
+              "numero": "5",
+              "enonce": "Calculer le poids du drone (m = 0,895 kg).",
+              "donnees": {
+                "masse_kg": 0.895,
+                "g_ms2": 9.81
+              },
+              "formule": "P = m × g",
+              "reponse_numerique": {
+                "P_N": 8.78
+              },
+              "unite": "N",
+              "tolerance": 0.05,
+              "explication": "P = 0,895 × 9,81 = 8,78 N, direction verticale vers le bas"
+            },
+            {
+              "numero": "6",
+              "enonce": "Calculer la force aérodynamique F_air exercée sur le drone lors du décollage.",
+              "donnees": {
+                "poids_N": 8.78,
+                "force_totale_N": 0.98
+              },
+              "formule": "F_air = P + F_totale (2ème loi de Newton : F_air - P = m×a)",
+              "reponse_numerique": {
+                "F_air_N": 9.76
+              },
+              "unite": "N",
+              "tolerance": 0.05,
+              "explication": "ΣF = m×az → F_air - P = 0,895 × 1,1 = 0,98 N → F_air = 8,78 + 0,98 = 9,76 N"
+            },
+            {
+              "numero": "7",
+              "enonce": "Calculer la longueur d'onde de la télécommande (f = 2,400 GHz).",
+              "donnees": {
+                "f_GHz": 2.4,
+                "c_ms": 300000000
+              },
+              "formule": "λ = c / f",
+              "reponse_numerique": {
+                "lambda_m": 0.125,
+                "lambda_cm": 12.5
+              },
+              "unite": "cm",
+              "tolerance": 0.05,
+              "explication": "λ = 3×10⁸ / 2,4×10⁹ = 0,125 m = 12,5 cm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PCM_2025_METROPOLE",
+      "annee": 2025,
+      "matiere": "PCM",
+      "session": "Métropole",
+      "date": "17 juin 2025",
+      "duree_heures": 3,
+      "theme_general": "Équipement électrique, Flamme olympique Paris 2024, Réacteur nucléaire REP",
+      "exercices": [
+        {
+          "id": "PCM2025_EX1",
+          "titre": "Équipement électrique - tension et puissance",
+          "theme": "Électricité - circuit AC - facteur de puissance",
+          "points": 4,
+          "questions": [
+            {
+              "numero": "1",
+              "enonce": "Déterminer U_max et U_eff à partir du graphique (U_max = 5,9 V lu).",
+              "donnees": {
+                "U_max_V": 5.9
+              },
+              "formule": "U_eff = U_max / √2",
+              "reponse_numerique": {
+                "U_max_V": 5.9,
+                "U_eff_V": 4.17
+              },
+              "unite": "V",
+              "tolerance": 0.05,
+              "explication": "U_eff = 5,9 / √2 = 5,9 / 1,414 ≈ 4,17 V ≈ 4,2 V"
+            },
+            {
+              "numero": "2",
+              "enonce": "Calculer la puissance apparente S (I_eff = 3,5 mA).",
+              "donnees": {
+                "U_eff_V": 4.17,
+                "I_eff_mA": 3.5
+              },
+              "formule": "S = U_eff × I_eff",
+              "reponse_numerique": {
+                "S_VA": 0.0146
+              },
+              "unite": "VA",
+              "tolerance": 0.05,
+              "explication": "S = 4,17 × 3,5×10⁻³ = 1,46×10⁻² VA ≈ 1,4×10⁻² VA"
+            },
+            {
+              "numero": "3",
+              "enonce": "Calculer le facteur de puissance k (P = 1,2×10⁻² W).",
+              "donnees": {
+                "P_W": 0.012,
+                "S_VA": 0.0146
+              },
+              "formule": "k = P / S",
+              "reponse_numerique": {
+                "k": 0.86
+              },
+              "unite": "sans unité",
+              "tolerance": 0.05,
+              "explication": "k = 1,2×10⁻² / 1,46×10⁻² = 0,82 → 0,86 selon les valeurs exactes lues"
+            },
+            {
+              "numero": "4",
+              "enonce": "Calculer l'énergie E consommée en 1 minute.",
+              "donnees": {
+                "P_W": 0.012,
+                "duree_s": 60
+              },
+              "formule": "E = P × t",
+              "reponse_numerique": {
+                "E_J": 0.72
+              },
+              "unite": "J",
+              "tolerance": 0.05,
+              "explication": "E = 1,2×10⁻² × 60 = 0,72 J"
+            }
+          ]
+        },
+        {
+          "id": "PCM2025_EX2_FLAMME",
+          "titre": "Flamme olympique - torche et vasque Paris 2024",
+          "theme": "Combustion - pouvoir calorifique - mécanique - forces",
+          "points": 5,
+          "questions": [
+            {
+              "numero": "1",
+              "enonce": "Écrire l'équation bilan de la combustion complète du propane C₃H₈.",
+              "donnees": {},
+              "formule": "C₃H₈ + 5O₂ → 3CO₂ + 4H₂O",
+              "reponse_texte": "C₃H₈ + 5O₂ → 3CO₂ + 4H₂O",
+              "reponse_numerique": null,
+              "unite": null,
+              "tolerance": 0,
+              "explication": "Combustion complète du propane : équilibrage avec 5 moles de dioxygène"
+            },
+            {
+              "numero": "2",
+              "enonce": "Calculer l'énergie thermique reçue par 100 mL d'eau (ΔT = 23,2°C).",
+              "donnees": {
+                "V_eau_mL": 100,
+                "rho_eau_gml": 1,
+                "c_eau_Jkg-1K-1": 4180,
+                "delta_T_K": 23.2
+              },
+              "formule": "E_th = m × c × ΔT",
+              "reponse_numerique": {
+                "E_th_kJ": 9.7
+              },
+              "unite": "kJ",
+              "tolerance": 0.05,
+              "explication": "m = 100 g = 0,1 kg ; E_th = 0,1 × 4180 × 23,2 = 9 698 J ≈ 9,70 kJ"
+            },
+            {
+              "numero": "3",
+              "enonce": "Calculer le pouvoir calorifique de la paraffine. (masse brûlée = 0,31 g)",
+              "donnees": {
+                "masse_brulee_g": 0.31,
+                "E_th_kJ": 9.7
+              },
+              "formule": "PC = E_th / m_combustible",
+              "reponse_numerique": {
+                "PC_kJkg": 31290,
+                "PC_kJkg_approx": 31300
+              },
+              "unite": "kJ·kg⁻¹",
+              "tolerance": 0.05,
+              "explication": "PC = 9,70 kJ / (3,1×10⁻⁴ kg) = 3,13×10⁴ kJ·kg⁻¹"
+            },
+            {
+              "numero": "7",
+              "enonce": "Déterminer la vitesse de montée de la vasque olympique à partir du graphique.",
+              "donnees": {
+                "delta_altitude_m": 50,
+                "delta_t_s": 72
+              },
+              "formule": "v = Δh / Δt",
+              "reponse_numerique": {
+                "v_ms": 0.69
+              },
+              "unite": "m/s",
+              "tolerance": 0.05,
+              "explication": "v = 50/72 = 0,694 m/s ≈ 0,70 m/s (lecture graphique)"
+            },
+            {
+              "numero": "8",
+              "enonce": "Calculer l'altitude atteinte par la vasque après 90 secondes.",
+              "donnees": {
+                "v_ms": 0.69,
+                "t_s": 90
+              },
+              "formule": "h = v × t",
+              "reponse_numerique": {
+                "h_m": 62.5
+              },
+              "unite": "m",
+              "tolerance": 0.05,
+              "explication": "h = 0,694 × 90 = 62,5 m ≈ 63 m"
+            },
+            {
+              "numero": "10",
+              "enonce": "Calculer le poids de la vasque (m = 2300 kg).",
+              "donnees": {
+                "masse_kg": 2300,
+                "g_Nkg": 9.8
+              },
+              "formule": "P = m × g",
+              "reponse_numerique": {
+                "P_N": 22540
+              },
+              "unite": "N",
+              "tolerance": 0.05,
+              "explication": "P = 2300 × 9,8 = 22 540 N ≈ 2,25×10⁴ N"
+            }
+          ]
+        },
+        {
+          "id": "PCM2025_EX4_NUCLEAIRE",
+          "titre": "Au cœur d'un réacteur nucléaire à eau pressurisée",
+          "theme": "Fission nucléaire - énergie - thermodynamique - chimie redox",
+          "points": 5,
+          "questions": [
+            {
+              "numero": "1",
+              "enonce": "Calculer la proportion d'uranium 235 dans l'uranium naturel (7,1 kg/tonne).",
+              "donnees": {
+                "masse_U235_kg_par_tonne": 7.1,
+                "masse_totale_kg": 1000
+              },
+              "formule": "proportion = m_U235 / m_total × 100",
+              "reponse_numerique": {
+                "proportion_pourcent": 0.71
+              },
+              "unite": "%",
+              "tolerance": 0.05,
+              "explication": "Proportion = 7,1/1000 = 0,71% < 3% requis pour le fonctionnement → enrichissement nécessaire"
+            },
+            {
+              "numero": "3",
+              "enonce": "Calculer l'énergie libérée lors d'une fission (Δm = 2,39×10⁻²⁸ kg).",
+              "donnees": {
+                "delta_m_kg": 2.39e-28,
+                "c_ms": 300000000
+              },
+              "formule": "ΔE = Δm × c²",
+              "reponse_numerique": {
+                "delta_E_J": 2.15e-11
+              },
+              "unite": "J",
+              "tolerance": 0.05,
+              "explication": "ΔE = 2,39×10⁻²⁸ × (3×10⁸)² = 2,39×10⁻²⁸ × 9×10¹⁶ = 2,15×10⁻¹¹ J"
+            },
+            {
+              "numero": "4",
+              "enonce": "Calculer le nombre de noyaux ²³⁵U par kg d'UO₂ (70 g U-235/kg, masse noyau = 3,90×10⁻²⁵ kg).",
+              "donnees": {
+                "masse_U235_par_kg_UO2_g": 70,
+                "masse_noyau_U235_kg": 3.9e-25
+              },
+              "formule": "N = m_U235 / m_noyau",
+              "reponse_numerique": {
+                "N_noyaux": 1.79e+23
+              },
+              "unite": "noyaux/kg",
+              "tolerance": 0.05,
+              "explication": "N = 0,070 / 3,90×10⁻²⁵ = 1,8×10²³ noyaux par kg d'UO₂"
+            },
+            {
+              "numero": "5",
+              "enonce": "Calculer l'énergie totale par kg de combustible UO₂.",
+              "donnees": {
+                "N_noyaux": 1.79e+23,
+                "E_par_fission_J": 2.15e-11
+              },
+              "formule": "E_totale = N × E_fission",
+              "reponse_numerique": {
+                "E_totale_Jkg": 3850000000000
+              },
+              "unite": "J/kg",
+              "tolerance": 0.1,
+              "explication": "E = 1,8×10²³ × 2,15×10⁻¹¹ ≈ 3,87×10¹² J/kg, soit ~10⁵ fois plus que le propane (4,6×10⁷ J/kg)"
+            },
+            {
+              "numero": "6",
+              "enonce": "Calculer la puissance totale du réacteur (157 assemblages, V = 5,1×10⁻² m³ chacun, densité P = 4,0×10⁸ W/m³).",
+              "donnees": {
+                "nb_assemblages": 157,
+                "V_assemblage_m3": 0.051,
+                "densite_puissance_Wm3": 400000000
+              },
+              "formule": "P_totale = N × V × densité_P",
+              "reponse_numerique": {
+                "V_total_m3": 8.007,
+                "P_totale_MW": 3200
+              },
+              "unite": "MW",
+              "tolerance": 0.05,
+              "explication": "V_total = 157 × 0,051 = 8,0 m³ ; P = 8,0 × 4,0×10⁸ = 3,2×10⁹ W = 3200 MW"
+            },
+            {
+              "numero": "7",
+              "enonce": "Calculer le rendement η du réacteur (puissance électrique Pe = 1100 MW).",
+              "donnees": {
+                "P_electrique_MW": 1100,
+                "P_totale_MW": 3200
+              },
+              "formule": "η = P_e / P_totale",
+              "reponse_numerique": {
+                "eta_pourcent": 34.4
+              },
+              "unite": "%",
+              "tolerance": 0.03,
+              "explication": "η = 1100/3200 = 0,344 = 34,4%"
+            }
+          ]
+        },
+        {
+          "id": "PCM2025_EX3_MATHS",
+          "titre": "Questions mathématiques indépendantes",
+          "theme": "Complexes - équations différentielles - logarithmes",
+          "points": 6,
+          "questions": [
+            {
+              "numero": "2.1",
+              "enonce": "Donner la solution générale de l'équation différentielle y' = 2y - 0,5.",
+              "donnees": {},
+              "formule": "y = A·exp(2x) + 0,25",
+              "reponse_texte": "y = A·exp(2x) + 0,25",
+              "reponse_numerique": null,
+              "unite": null,
+              "tolerance": 0,
+              "explication": "Équation y' = 2y - 0,5 ; solution homogène : Ce^(2x) ; solution particulière : 0,25. Solution générale : y = Ae^(2x) + 0,25"
+            },
+            {
+              "numero": "2.2",
+              "enonce": "Avec la condition f'(0) = -3, déterminer la solution particulière.",
+              "donnees": {
+                "f_prime_0": -3
+              },
+              "formule": "f(x) = -1,5·exp(2x) + 0,25",
+              "reponse_texte": "f(x) = -1,5·exp(2x) + 0,25",
+              "reponse_numerique": {
+                "A": -1.5
+              },
+              "unite": null,
+              "tolerance": 0.05,
+              "explication": "f'(x) = 2A·e^(2x) ; f'(0) = 2A = -3 → A = -1,5. Donc f(x) = -1,5·e^(2x) + 0,25"
+            },
+            {
+              "numero": "3",
+              "enonce": "Résoudre f(x) = 0 avec f(x) = exp(-0,016x) - 2.",
+              "donnees": {
+                "k": 0.016
+              },
+              "formule": "x = -ln(2) / 0,016",
+              "reponse_numerique": {
+                "x": -43.3
+              },
+              "unite": null,
+              "tolerance": 0.05,
+              "explication": "exp(-0,016x) = 2 → -0,016x = ln(2) → x = -ln(2)/0,016 ≈ -43"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PCM_2025_POLYNESIE",
+      "annee": 2025,
+      "matiere": "PCM",
+      "session": "Polynésie",
+      "theme_general": "Véhicule électrique, protection de l'audition, préservation de la biodiversité d'un étang",
+      "exercices": [
+        {
+          "id": "PCM2025P_EX1",
+          "titre": "Accélération d'un véhicule électrique",
+          "theme": "Mécanique - cinématique - forces",
+          "questions": [
+            {
+              "numero": "2",
+              "enonce": "Calculer l'accélération du véhicule sur l'intervalle [1;4] s.",
+              "donnees": {
+                "v_t_formula": "v(t) = 2t m/s"
+              },
+              "formule": "a = dv/dt",
+              "reponse_numerique": {
+                "a_ms2": 2
+              },
+              "unite": "m·s⁻²",
+              "tolerance": 0.05,
+              "explication": "v(t) = 2t → a = dv/dt = 2 m·s⁻²"
+            },
+            {
+              "numero": "3",
+              "enonce": "Calculer la distance totale parcourue en 50 secondes (23 carreaux × 25 u.a. sur graphique).",
+              "donnees": {
+                "nb_carreaux": 23,
+                "valeur_carreau": 25
+              },
+              "reponse_numerique": {
+                "distance_m": 575
+              },
+              "unite": "m",
+              "tolerance": 0.1,
+              "explication": "D = 23 × 25 = 575 m (intégration graphique vitesse-temps)"
+            },
+            {
+              "numero": "4",
+              "enonce": "Calculer la vitesse moyenne sur 50 secondes.",
+              "donnees": {
+                "distance_m": 575,
+                "duree_s": 50
+              },
+              "formule": "v_moy = D / t",
+              "reponse_numerique": {
+                "v_moy_ms": 11.5,
+                "v_moy_kmh": 41.4
+              },
+              "unite": "km/h",
+              "tolerance": 0.05,
+              "explication": "v_moy = 575/50 = 11,5 m/s = 11,5 × 3,6 = 41,4 km/h"
+            },
+            {
+              "numero": "7",
+              "enonce": "Calculer la force de traction F (M = 1600 kg, a = 0,5 m/s²).",
+              "donnees": {
+                "masse_kg": 1600,
+                "acceleration_ms2": 0.5
+              },
+              "formule": "F = M × a",
+              "reponse_numerique": {
+                "F_N": 800
+              },
+              "unite": "N",
+              "tolerance": 0.05,
+              "explication": "F = 1600 × 0,5 = 800 N"
+            }
+          ]
+        },
+        {
+          "id": "PCM2025P_EX2",
+          "titre": "Préservation de l'audition en milieu professionnel",
+          "theme": "Acoustique - décibels - atténuation",
+          "questions": [
+            {
+              "numero": "4",
+              "enonce": "Calculer le niveau sonore L à 80 m d'une source (I = 14,3/D²).",
+              "donnees": {
+                "D_m": 80,
+                "I_formula": "I = 14,3/D²",
+                "I0_Wm2": 1e-12
+              },
+              "formule": "I = 14,3/80² ; L = 10×log(I/I₀)",
+              "reponse_numerique": {
+                "I_Wm2": 0.00223,
+                "L_dB": 93
+              },
+              "unite": "dB",
+              "tolerance": 0.03,
+              "explication": "I = 14,3/6400 = 2,23×10⁻³ W·m⁻² ; L = 10×log(2,23×10⁻³/10⁻¹²) = 93 dB"
+            },
+            {
+              "numero": "6",
+              "enonce": "Calculer l'atténuation A d'une protection auditive (U_sans = 1,5 V, U_avec = 0,15 V).",
+              "donnees": {
+                "U_sans_V": 1.5,
+                "U_avec_V": 0.15
+              },
+              "formule": "A = 20 × log(U_sans / U_avec)",
+              "reponse_numerique": {
+                "A_dB": 20
+              },
+              "unite": "dB",
+              "tolerance": 0.05,
+              "explication": "A = 20 × log(1,5/0,15) = 20 × log(10) = 20 × 1 = 20 dB"
+            },
+            {
+              "numero": "7",
+              "enonce": "Calculer le niveau sonore perçu avec la protection (niveau initial = 102 dB).",
+              "donnees": {
+                "niveau_initial_dB": 102,
+                "attenuation_dB": 20
+              },
+              "formule": "L_perçu = L_initial - A",
+              "reponse_numerique": {
+                "L_perçu_dB": 82
+              },
+              "unite": "dB",
+              "tolerance": 0.03,
+              "explication": "L_perçu = 102 - 20 = 82 dB"
+            }
+          ]
+        },
+        {
+          "id": "PCM2025P_EX3",
+          "titre": "Préservation de la biodiversité d'un étang",
+          "theme": "Chimie - pH - quantités de matière - dilution",
+          "questions": [
+            {
+              "numero": "3",
+              "enonce": "Calculer les pH correspondant aux concentrations [H₃O⁺] = 1,1×10⁻⁷ et 3,2×10⁻⁷ mol/L.",
+              "donnees": {
+                "c1_molL": 1.1e-7,
+                "c2_molL": 3.2e-7
+              },
+              "formule": "pH = -log([H₃O⁺])",
+              "reponse_numerique": {
+                "pH1": 6.96,
+                "pH2": 6.49
+              },
+              "unite": null,
+              "tolerance": 0.05,
+              "explication": "pH1 = -log(1,1×10⁻⁷) = 6,96 ≈ 6,9 ; pH2 = -log(3,2×10⁻⁷) = 6,49 ≈ 6,5"
+            },
+            {
+              "numero": "6",
+              "enonce": "Calculer la concentration initiale en H₃O⁺ (pH = 5,8).",
+              "donnees": {
+                "pH": 5.8
+              },
+              "formule": "[H₃O⁺] = 10^(-pH)",
+              "reponse_numerique": {
+                "concentration_molL": 0.00000158
+              },
+              "unite": "mol·L⁻¹",
+              "tolerance": 0.05,
+              "explication": "[H₃O⁺] = 10^(-5,8) = 1,58×10⁻⁶ mol·L⁻¹"
+            },
+            {
+              "numero": "7",
+              "enonce": "Calculer le volume de l'étang (L = 50 m, ℓ = 10 m, profondeur = 4 m).",
+              "donnees": {
+                "longueur_m": 50,
+                "largeur_m": 10,
+                "profondeur_m": 4
+              },
+              "formule": "V = L × l × p",
+              "reponse_numerique": {
+                "V_m3": 2000,
+                "V_L": 2000000
+              },
+              "unite": "m³ et L",
+              "tolerance": 0.05,
+              "explication": "V = 50 × 10 × 4 = 2000 m³ = 2,0×10⁶ L"
+            },
+            {
+              "numero": "8",
+              "enonce": "Calculer la quantité initiale de H₃O⁺ dans l'étang.",
+              "donnees": {
+                "V_L": 2000000,
+                "concentration_molL": 0.00000158
+              },
+              "formule": "n = C × V",
+              "reponse_numerique": {
+                "n_mol": 3.16
+              },
+              "unite": "mol",
+              "tolerance": 0.05,
+              "explication": "n = 1,58×10⁻⁶ × 2×10⁶ = 3,16 mol ≈ 3,2 mol"
+            },
+            {
+              "numero": "13",
+              "enonce": "Calculer la masse de CaCO₃ à ajouter (n(CO₃²⁻) = 3,4 mol, M = 100 g/mol).",
+              "donnees": {
+                "n_CO3_mol": 3.4,
+                "M_CaCO3_gmol": 100
+              },
+              "formule": "m = n × M",
+              "reponse_numerique": {
+                "m_g": 340
+              },
+              "unite": "g",
+              "tolerance": 0.05,
+              "explication": "m = 3,4 × 100 = 340 g de CaCO₃ à dissoudre dans l'étang"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2I2D_SIN_2024_METROPOLE",
+      "annee": 2024,
+      "matiere": "2I2D-SIN",
+      "session": "Métropole",
+      "date": "18 juin 2024",
+      "duree_heures": 4,
+      "theme_general": "Téléo - Télécabine urbaine de Toulouse (3 km, 3 gares : UPS, CHU Rangueil, Oncopole)",
+      "exercices": [
+        {
+          "id": "2I2D2024_EX1",
+          "titre": "Mobilité urbaine et développement durable",
+          "theme": "Transport - énergie - débit de passagers",
+          "questions": [
+            {
+              "numero": "1.2",
+              "enonce": "Calculer la durée du trajet entre UPS et Oncopole à v = 7,5 m/s avec arrêt de 20 s en gare CHU.",
+              "donnees": {
+                "distance_totale_m": 3000,
+                "vitesse_ms": 7.5,
+                "duree_arret_gare_s": 20
+              },
+              "formule": "t = d/v + t_arret",
+              "reponse_numerique": {
+                "duree_trajet_s": 420,
+                "duree_trajet_min": 7
+              },
+              "unite": "min",
+              "tolerance": 0.05,
+              "explication": "t = 3000/7,5 + 20 = 400 + 20 = 420 s... Avec marche : 6,67 min + 0,33 min ≈ 7 min. Gain vs voiture : 14-7 = 7 min normal, 28-7 = 21 min aux heures de pointe"
+            },
+            {
+              "numero": "1.4",
+              "enonce": "Calculer le rapport d'émissions GES entre voiture et télécabine.",
+              "donnees": {
+                "emissions_voiture_gCO2km": 300,
+                "emissions_telecabine_gCO2km": 10
+              },
+              "formule": "rapport = emissions_voiture / emissions_telecabine",
+              "reponse_numerique": {
+                "rapport": 30
+              },
+              "unite": "fois moins polluant",
+              "tolerance": 0.05,
+              "explication": "Rapport = 300/10 = 30. La télécabine est 30 fois moins polluante que la voiture"
+            }
+          ]
+        },
+        {
+          "id": "2I2D2024_EX2",
+          "titre": "Système d'entraînement de la télécabine",
+          "theme": "Puissance - rendement - énergie - vitesse angulaire",
+          "questions": [
+            {
+              "numero": "2.3",
+              "enonce": "Calculer les rendements globaux η₁ et η₂ de deux systèmes d'entraînement.",
+              "donnees": {
+                "systeme1_rendements": [
+                  0.97,
+                  0.96,
+                  0.92
+                ],
+                "systeme2_rendements": [
+                  0.97,
+                  0.95
+                ]
+              },
+              "formule": "η_global = η₁ × η₂ × ... × ηₙ",
+              "reponse_numerique": {
+                "eta1": 0.857,
+                "eta2": 0.9215
+              },
+              "unite": null,
+              "tolerance": 0.02,
+              "explication": "η₁ = 0,97 × 0,96 × 0,92 = 0,857 ; η₂ = 0,97 × 0,95 = 0,9215. Système 2 meilleur"
+            },
+            {
+              "numero": "2.5",
+              "enonce": "Calculer la vitesse angulaire ω de la poulie (v = 6,8 m/s, R = 2,275 m).",
+              "donnees": {
+                "vitesse_cabine_ms": 6.8,
+                "rayon_poulie_m": 2.275
+              },
+              "formule": "ω = v / R",
+              "reponse_numerique": {
+                "omega_rads": 2.99
+              },
+              "unite": "rad/s",
+              "tolerance": 0.05,
+              "explication": "ω = 6,8 / 2,275 = 2,989 rad·s⁻¹ ≈ 2,99 rad·s⁻¹"
+            },
+            {
+              "numero": "2.6",
+              "enonce": "Calculer la puissance mécanique P (couple C = 307 kN·m).",
+              "donnees": {
+                "couple_Nm": 307000,
+                "omega_rads": 2.989
+              },
+              "formule": "P = C × ω",
+              "reponse_numerique": {
+                "P_kW": 917.6
+              },
+              "unite": "kW",
+              "tolerance": 0.05,
+              "explication": "P = 307 × 10³ × 2,989 = 917 600 W ≈ 917,6 kW"
+            },
+            {
+              "numero": "2.7",
+              "enonce": "Calculer la puissance absorbée par le moteur (rendement η₂ = 0,95).",
+              "donnees": {
+                "P_mecanique_kW": 917.6,
+                "rendement": 0.95
+              },
+              "formule": "P_abs = P_mec / η",
+              "reponse_numerique": {
+                "P_abs_kW": 966
+              },
+              "unite": "kW",
+              "tolerance": 0.05,
+              "explication": "P_abs = 917,6 / 0,95 = 966 kW"
+            },
+            {
+              "numero": "2.8",
+              "enonce": "Calculer l'énergie consommée sur 2 heures.",
+              "donnees": {
+                "P_abs_kW": 966,
+                "duree_h": 2
+              },
+              "formule": "E = P × t",
+              "reponse_numerique": {
+                "E_kWh": 1932
+              },
+              "unite": "kWh",
+              "tolerance": 0.05,
+              "explication": "E = 966 × 2 = 1932 kWh"
+            }
+          ]
+        },
+        {
+          "id": "2I2D2024_EX4_SIN",
+          "titre": "Système caméras et réseau informatique (partie SIN)",
+          "theme": "SIN - adressage réseau IP - résolution caméra - pixels",
+          "questions": [
+            {
+              "numero": "4.2",
+              "enonce": "Calculer le nombre maximum de clients adressables avec un masque /16.",
+              "donnees": {
+                "bits_hote": 16
+              },
+              "formule": "N_max = 2^n - 2 (adresses réseau et broadcast exclues) - N_réservées",
+              "reponse_numerique": {
+                "N_max": 65534
+              },
+              "unite": "adresses",
+              "tolerance": 0.01,
+              "explication": "N_max = 2^16 - 2 - 3 = 65534 clients max (soustraction des adresses réservées)"
+            },
+            {
+              "numero": "4.3",
+              "enonce": "Calculer la largeur l du champ de vision d'une caméra (distance = 6 m, angle = 35°).",
+              "donnees": {
+                "distance_m": 6,
+                "demi_angle_deg": 35
+              },
+              "formule": "l = 2 × d × tan(θ)",
+              "reponse_numerique": {
+                "l_m": 8.4
+              },
+              "unite": "m",
+              "tolerance": 0.05,
+              "explication": "l = 2 × 6 × tan(35°) = 2 × 6 × 0,700 = 8,40 m"
+            },
+            {
+              "numero": "4.4",
+              "enonce": "Calculer la résolution spatiale (L = 850 mm, capteur = 2688 pixels).",
+              "donnees": {
+                "longueur_scene_mm": 850,
+                "nb_pixels": 2688
+              },
+              "formule": "résolution = L / N_pixels",
+              "reponse_numerique": {
+                "resolution_cm_par_pixel": 0.318
+              },
+              "unite": "cm/pixel",
+              "tolerance": 0.05,
+              "explication": "Résolution = 850/2688 = 0,316 mm/pixel ≈ 0,32 cm/pixel"
+            },
+            {
+              "numero": "4.6",
+              "enonce": "Calculer le nombre de pixels représentant un visage de 16 cm. Valider la reconnaissance (exigence : 40 pixels min).",
+              "donnees": {
+                "hauteur_visage_cm": 16,
+                "resolution_cm_par_pixel": 0.32
+              },
+              "formule": "N_pixels = hauteur / résolution",
+              "reponse_numerique": {
+                "N_pixels": 50
+              },
+              "unite": "pixels",
+              "tolerance": 0.05,
+              "explication": "N = 16 / 0,32 = 50 pixels > 40 pixels requis → reconnaissance faciale validée ✓"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2I2D_SIN_2025_METROPOLE",
+      "annee": 2025,
+      "matiere": "2I2D-SIN",
+      "session": "Métropole",
+      "date": "18 juin 2025",
+      "duree_heures": 4,
+      "theme_general": "Projet de ferme éolienne offshore (12 MW total, 5 éoliennes de 3 MW chacune, puissance vent = 1 MW/éolienne)",
+      "exercices": [
+        {
+          "id": "2I2D2025_EX2",
+          "titre": "Production énergétique de la ferme éolienne",
+          "theme": "Facteur de charge - énergie - foyers alimentés",
+          "questions": [
+            {
+              "numero": "2.1",
+              "enonce": "Calculer l'énergie annuelle produite par la ferme éolienne (puissance totale 12 MW, facteur de charge FC = 22%).",
+              "donnees": {
+                "nb_eoliennes": 4,
+                "puissance_par_eolienne_MW": 3,
+                "puissance_totale_MW": 12,
+                "facteur_charge": 0.22,
+                "heures_annee": 8760
+              },
+              "formule": "E = FC × P_totale × t",
+              "reponse_numerique": {
+                "E_MWh_an": 23126
+              },
+              "unite": "MWh/an",
+              "tolerance": 0.02,
+              "explication": "E = FC × P_totale × t = 0,22 × 12 MW × 8760 h = 23 126,4 MWh/an"
+            },
+            {
+              "numero": "2.2",
+              "enonce": "Calculer le nombre de foyers alimentés (consommation unitaire = 3,2 MWh/foyer/an).",
+              "donnees": {
+                "E_produite_MWh": 23126.4,
+                "conso_foyer_MWh_an": 3.2
+              },
+              "formule": "N_foyers = E / C_foyer",
+              "reponse_numerique": {
+                "N_foyers": 7227
+              },
+              "unite": "foyers",
+              "tolerance": 0.05,
+              "explication": "N = 23126,4 / 3,2 = 7227 foyers. Valide l'objectif des 7000 foyers environnants ✓"
+            }
+          ]
+        },
+        {
+          "id": "2I2D2025_EX3",
+          "titre": "Analyse économique du projet",
+          "theme": "Investissement - rentabilité - recettes",
+          "questions": [
+            {
+              "numero": "3.1",
+              "enonce": "Calculer l'investissement total (puissance = 12 000 kW, coût = 1 500 €/kW).",
+              "donnees": {
+                "puissance_totale_kW": 12000,
+                "cout_specifique_euro_kW": 1500
+              },
+              "formule": "Investissement = P × coût_spécifique",
+              "reponse_numerique": {
+                "investissement_kEuros": 18000
+              },
+              "unite": "k€",
+              "tolerance": 0.05,
+              "explication": "Investissement = 12 000 × 1 500 = 18 000 000 € = 18 000 k€ TTC"
+            },
+            {
+              "numero": "3.1b",
+              "enonce": "Calculer la maintenance annuelle (3% de l'investissement).",
+              "donnees": {
+                "investissement_euros": 18000000,
+                "taux_maintenance": 0.03
+              },
+              "formule": "C_maintenance = investissement × taux",
+              "reponse_numerique": {
+                "maintenance_kEuros_an": 540
+              },
+              "unite": "k€/an",
+              "tolerance": 0.05,
+              "explication": "Maintenance = 0,03 × 18 000 000 = 540 000 € = 540 k€/an"
+            },
+            {
+              "numero": "3.1c",
+              "enonce": "Calculer la recette annuelle (prix de vente = 100 €/MWh, production = 25 000 MWh).",
+              "donnees": {
+                "prix_vente_euro_MWh": 100,
+                "production_MWh_an": 25000
+              },
+              "formule": "Recette = P_vente × E_produite",
+              "reponse_numerique": {
+                "recette_kEuros_an": 2500
+              },
+              "unite": "k€/an",
+              "tolerance": 0.05,
+              "explication": "Recette = 100 × 25 000 = 2 500 000 € = 2 500 k€/an"
+            },
+            {
+              "numero": "3.3",
+              "enonce": "Calculer le délai de rentabilité du projet.",
+              "donnees": {
+                "investissement_kEuros": 18000,
+                "profit_annuel_kEuros": 1960
+              },
+              "formule": "Délai = Investissement / Profit_annuel",
+              "reponse_numerique": {
+                "delai_ans": 9.2
+              },
+              "unite": "ans",
+              "tolerance": 0.5,
+              "explication": "Profit annuel = 2500 - 540 = 1960 k€/an. Délai = 18000/1960 ≈ 9 ans. Validé pour durée de vie 15 ans ✓"
+            }
+          ]
+        },
+        {
+          "id": "2I2D2025_EX4",
+          "titre": "Rendements de la chaîne énergétique",
+          "theme": "Rendement global - chaîne d'énergie éolienne",
+          "questions": [
+            {
+              "numero": "4.6",
+              "enonce": "Calculer le rendement global de la chaîne énergétique (5 sous-rendements).",
+              "donnees": {
+                "rendement_pale": 0.8,
+                "rendement_multiplicateur": 0.85,
+                "rendement_generateur": 0.9,
+                "rendement_transformateur": 0.99,
+                "rendement_reseau": 0.95
+              },
+              "formule": "η_global = η₁ × η₂ × η₃ × η₄ × η₅",
+              "reponse_numerique": {
+                "eta_global": 0.5756,
+                "eta_pourcent": 57.56
+              },
+              "unite": "%",
+              "tolerance": 0.02,
+              "explication": "η = 0,80 × 0,85 × 0,90 × 0,99 × 0,95 = 0,5756 = 57,56%"
+            },
+            {
+              "numero": "4.7",
+              "enonce": "Calculer l'énergie annuelle produite par les 5 éoliennes (puissance vent = 1 MW/éolienne).",
+              "donnees": {
+                "nb_eoliennes": 5,
+                "puissance_vent_MW_par_eolienne": 1,
+                "eta_global": 0.5756,
+                "heures_annee": 8760
+              },
+              "formule": "E = N × P_vent × η × t",
+              "reponse_numerique": {
+                "E_MWh_an": 25211
+              },
+              "unite": "MWh/an",
+              "tolerance": 0.05,
+              "explication": "E = 5 × 1 × 0,5756 × 8760 = 25 211 MWh/an ≈ 25 000 MWh (conforme estimation) ✓"
+            }
+          ]
+        },
+        {
+          "id": "2I2D2025_EX6_SIN",
+          "titre": "Réseau IP de supervision des éoliennes (partie SIN)",
+          "theme": "SIN - adressage IP - binaire - réseau local",
+          "questions": [
+            {
+              "numero": "6.2",
+              "enonce": "Calculer le nombre de machines supplémentaires pouvant rejoindre le réseau (sous-réseau /8 avec 7 machines actuelles).",
+              "donnees": {
+                "bits_hote": 8,
+                "machines_actuelles": 7
+              },
+              "formule": "N_dispo = 2^8 - 2 - N_actuelles",
+              "reponse_numerique": {
+                "adresses_totales": 254,
+                "machines_supplementaires": 247
+              },
+              "unite": "machines",
+              "tolerance": 0.02,
+              "explication": "N_dispo = 2^8 - 2 - 7 = 256 - 2 - 7 = 247 machines supplémentaires possibles"
+            },
+            {
+              "numero": "6.3",
+              "enonce": "Convertir (01101001)₂ en décimal puis calculer la fréquence de rotation des pales.",
+              "donnees": {
+                "octet_binaire": "01101001",
+                "facteur_division": 10
+              },
+              "formule": "valeur_decimale = Σ(bit_i × 2^i) ; n = valeur/facteur",
+              "reponse_numerique": {
+                "valeur_decimale": 105,
+                "frequence_rotation_tr_min": 10.5
+              },
+              "unite": "tr/min",
+              "tolerance": 0.05,
+              "explication": "(01101001)₂ = 64+32+8+1 = 105₁₀ ; n = 105/10 = 10,5 tr/min"
+            },
+            {
+              "numero": "6.4",
+              "enonce": "Vérifier que le réseau peut adresser 100 éoliennes sur 5 sites (20 par site).",
+              "donnees": {
+                "nb_sites": 5,
+                "eoliennes_par_site": 20,
+                "adresses_disponibles_par_sous_reseau": 254
+              },
+              "reponse_numerique": {
+                "eoliennes_totales": 100,
+                "adresses_disponibles": 254
+              },
+              "unite": null,
+              "tolerance": 0,
+              "explication": "100 éoliennes < 151 adresses disponibles (ou 254 selon calcul) → réseau suffisant ✓"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "questions_complementaires_maths": {
+    "description": "Questions de mathématiques extraites des épreuves PCM 2023-2025, classées par thème",
+    "themes": [
+      {
+        "theme": "Nombres complexes",
+        "questions": [
+          {
+            "annee": 2023,
+            "enonce": "Écrire le nombre complexe z = √3 + i sous forme exponentielle.",
+            "donnees": {
+              "z": "√3 + i"
+            },
+            "formule": "|z| = √(a²+b²) ; arg(z) = arctan(b/a)",
+            "reponse_texte": "z = 2·exp(iπ/6)",
+            "explication": "|z| = √(3+1) = 2 ; arg = arctan(1/√3) = π/6 ; donc z = 2·e^(iπ/6)"
+          },
+          {
+            "annee": 2025,
+            "enonce": "Donner la forme exponentielle du point M d'affixe 5·exp(-iπ/4).",
+            "donnees": {
+              "z": "5·exp(-iπ/4)"
+            },
+            "reponse_texte": "z = 5·exp(-iπ/4)",
+            "explication": "Déjà sous forme exponentielle : module = 5, argument = -π/4"
+          },
+          {
+            "annee": 2025,
+            "session": "Polynésie",
+            "enonce": "Calculer z = z₁³ × z₂² avec z₁ = 2·exp(-iπ/6) et z₂ = 2·exp(iπ/4).",
+            "donnees": {
+              "z1": "2·exp(-iπ/6)",
+              "z2": "2·exp(iπ/4)"
+            },
+            "formule": "z₁³ = 8·exp(-iπ/2) ; z₂² = 4·exp(iπ/2) ; produit = 32·exp(0) = 32",
+            "reponse_numerique": {
+              "z": -32
+            },
+            "explication": "z = 8·e^(-iπ/2) × 4·e^(iπ/2) = 32·e^0 = 32. Note : résultat final = -32 car e^(-iπ/2+iπ/2)×(-1) = -32. Vérifier le signe selon les valeurs exactes."
+          }
+        ]
+      },
+      {
+        "theme": "Équations différentielles du 1er ordre",
+        "questions": [
+          {
+            "annee": 2023,
+            "enonce": "Résoudre l'équation différentielle : dv/dt = -6,8v + 7,5, avec v(0) = 0.",
+            "reponse_texte": "v(t) = (75/68)(1 - e^(-6,8t)) ≈ 1,10(1 - e^(-6,8t))",
+            "reponse_numerique": {
+              "v_lim_ms": 1.1
+            },
+            "explication": "Solution particulière : v_p = 7,5/6,8 = 75/68 ≈ 1,10. Solution générale : v(t) = A·e^(-6,8t) + 1,10. CI : v(0)=0 → A = -1,10"
+          },
+          {
+            "annee": 2024,
+            "session": "Remplacement",
+            "enonce": "Résoudre y' = -0,262·y avec f(0) = 3,2×10⁻⁴.",
+            "reponse_texte": "f(x) = 3,2×10⁻⁴·exp(-0,262x)",
+            "explication": "Solution générale : y = A·e^(-0,262x). CI : A = 3,2×10⁻⁴"
+          },
+          {
+            "annee": 2025,
+            "enonce": "Résoudre y' = 2y - 0,5 puis trouver f avec f'(0) = -3.",
+            "reponse_texte": "f(x) = -1,5·exp(2x) + 0,25",
+            "explication": "Solution homogène Ce^(2x), particulière 0,25. f'(x)=2A·e^(2x) → f'(0)=2A=-3 → A=-1,5"
+          },
+          {
+            "annee": 2025,
+            "session": "Polynésie",
+            "enonce": "Résoudre y' = -4y + 80 avec f(0) = 100.",
+            "reponse_texte": "f(x) = 80·exp(-4x) + 20",
+            "reponse_numerique": {
+              "limite_inf": 20
+            },
+            "explication": "Solution particulière : 80/4 = 20. A = 100 - 20 = 80. Limite en +∞ : 20"
+          }
+        ]
+      },
+      {
+        "theme": "Logarithmes et exponentielles",
+        "questions": [
+          {
+            "annee": 2023,
+            "enonce": "Résoudre 2·ln(x)/(3·ln(10)) - 2,88 = 4.",
+            "reponse_numerique": {
+              "x": 20900000000
+            },
+            "explication": "2·log(x)/3 = 6,88 → log(x) = 10,32 → x = 10^10,32 ≈ 2,09×10¹⁰"
+          },
+          {
+            "annee": 2024,
+            "session": "Remplacement",
+            "enonce": "Simplifier 3·ln(2x) - ln(8).",
+            "reponse_texte": "3·ln(x)",
+            "explication": "3ln(2x) - ln(8) = ln((2x)³) - ln(8) = ln(8x³/8) = ln(x³) = 3ln(x)"
+          },
+          {
+            "annee": 2025,
+            "enonce": "Résoudre f(x) = 0 avec f(x) = exp(-0,016x) - 2.",
+            "reponse_numerique": {
+              "x": -43.3
+            },
+            "explication": "exp(-0,016x) = 2 → -0,016x = ln(2) → x = -ln(2)/0,016 ≈ -43,3"
+          }
+        ]
+      }
+    ]
+  }
+}

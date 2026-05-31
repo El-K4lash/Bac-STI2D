@@ -1,0 +1,407 @@
+[
+  {
+    "id": 27, "mat": "PC", "titre": "Rendement moteur (variable)", "freq": "chaque-annee", "difficulte": "facile",
+    "type": "numerique_variable",
+    "template": "Un moteur absorbe {Pa} W et fournit {Pu} W. Calculer le rendement.",
+    "variables": [
+      {"Pa": 400, "Pu": 320, "correct": "80%", "explication": "η = 320/400 = 0,80 = 80%"},
+      {"Pa": 600, "Pu": 450, "correct": "75%", "explication": "η = 450/600 = 0,75 = 75%"},
+      {"Pa": 250, "Pu": 200, "correct": "80%", "explication": "η = 200/250 = 0,80 = 80%"},
+      {"Pa": 1000, "Pu": 850, "correct": "85%", "explication": "η = 850/1000 = 0,85 = 85%"},
+      {"Pa": 800, "Pu": 560, "correct": "70%", "explication": "η = 560/800 = 0,70 = 70%"},
+      {"Pa": 1500, "Pu": 1200, "correct": "80%", "explication": "η = 1200/1500 = 0,80 = 80%"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_percent"
+  },
+  {
+    "id": 28, "mat": "PC", "titre": "Tension efficace / Tension maximale (variable)", "freq": "chaque-annee", "difficulte": "facile",
+    "type": "numerique_variable",
+    "template": "Une tension sinusoïdale a une valeur maximale de {Umax} V. Calculer la valeur efficace.",
+    "variables": [
+      {"Umax": 325, "correct": "230 V", "explication": "Ueff = 325/√2 = 325/1,414 ≈ 230 V (réseau France)"},
+      {"Umax": 156, "correct": "110 V", "explication": "Ueff = 156/√2 ≈ 110 V (réseau USA)"},
+      {"Umax": 14.1, "correct": "10 V", "explication": "Ueff = 14,1/√2 ≈ 10 V"},
+      {"Umax": 42.4, "correct": "30 V", "explication": "Ueff = 42,4/√2 ≈ 30 V"},
+      {"Umax": 282, "correct": "199 V", "explication": "Ueff = 282/√2 ≈ 199 V"},
+      {"Umax": 100, "correct": "70,7 V", "explication": "Ueff = 100/√2 ≈ 70,7 V"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_voltage"
+  },
+  {
+    "id": 29, "mat": "PC", "titre": "Puissance active avec cos φ (variable)", "freq": "chaque-annee", "difficulte": "moyen",
+    "type": "numerique_variable",
+    "template": "Un dipôle est alimenté sous {Ueff} V, traversé par {Ieff} A avec cos φ = {cosphi}. Calculer la puissance active.",
+    "variables": [
+      {"Ueff": 230, "Ieff": 2, "cosphi": 0.8, "correct": "368 W", "explication": "P = 230×2×0,8 = 368 W"},
+      {"Ueff": 230, "Ieff": 5, "cosphi": 0.9, "correct": "1035 W", "explication": "P = 230×5×0,9 = 1035 W"},
+      {"Ueff": 400, "Ieff": 3, "cosphi": 0.75, "correct": "900 W", "explication": "P = 400×3×0,75 = 900 W"},
+      {"Ueff": 230, "Ieff": 10, "cosphi": 1.0, "correct": "2300 W", "explication": "P = 230×10×1 = 2300 W (résistance pure)"},
+      {"Ueff": 120, "Ieff": 4, "cosphi": 0.85, "correct": "408 W", "explication": "P = 120×4×0,85 = 408 W"},
+      {"Ueff": 230, "Ieff": 8, "cosphi": 0.7, "correct": "1288 W", "explication": "P = 230×8×0,7 = 1288 W"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_watts"
+  },
+  {
+    "id": 30, "mat": "PC", "titre": "Énergie cinétique (variable)", "freq": "chaque-annee", "difficulte": "facile",
+    "type": "numerique_variable",
+    "template": "Un objet de masse {m} kg se déplace à {v} m/s. Calculer son énergie cinétique.",
+    "variables": [
+      {"m": 80, "v": 2, "correct": "160 J", "explication": "Ec = ½×80×2² = ½×80×4 = 160 J"},
+      {"m": 75, "v": 3, "correct": "337,5 J", "explication": "Ec = ½×75×3² = ½×75×9 = 337,5 J"},
+      {"m": 1200, "v": 10, "correct": "60 000 J", "explication": "Ec = ½×1200×10² = ½×1200×100 = 60 000 J"},
+      {"m": 50, "v": 4, "correct": "400 J", "explication": "Ec = ½×50×4² = ½×50×16 = 400 J"},
+      {"m": 0.1, "v": 100, "correct": "500 J", "explication": "Ec = ½×0,1×100² = ½×0,1×10000 = 500 J"},
+      {"m": 65, "v": 5, "correct": "812,5 J", "explication": "Ec = ½×65×5² = ½×65×25 = 812,5 J"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_joules"
+  },
+  {
+    "id": 31, "mat": "PC", "titre": "Longueur d'onde (variable)", "freq": "chaque-annee", "difficulte": "facile",
+    "type": "numerique_variable",
+    "template": "Une onde se propage à {v} m/s avec une fréquence de {f} Hz. Calculer la longueur d'onde.",
+    "variables": [
+      {"v": 340, "f": 340, "correct": "1 m", "explication": "λ = v/f = 340/340 = 1 m"},
+      {"v": 340, "f": 170, "correct": "2 m", "explication": "λ = v/f = 340/170 = 2 m"},
+      {"v": 340, "f": 1000, "correct": "0,34 m", "explication": "λ = v/f = 340/1000 = 0,34 m"},
+      {"v": 1500, "f": 50000, "correct": "0,03 m", "explication": "λ = v/f = 1500/50000 = 0,03 m (ultrasons dans l'eau)"},
+      {"v": 300000000, "f": 100000000, "correct": "3 m", "explication": "λ = c/f = 3×10⁸/10⁸ = 3 m (ondes radio FM)"},
+      {"v": 340, "f": 440, "correct": "0,773 m", "explication": "λ = v/f = 340/440 ≈ 0,773 m (La 440 Hz)"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_meters"
+  },
+  {
+    "id": 32, "mat": "PC", "titre": "pH d'une solution (variable)", "freq": "regulier", "difficulte": "facile",
+    "type": "numerique_variable",
+    "template": "Une solution a une concentration en ions H3O⁺ de 10^({exposant}) mol/L. Quel est son pH ?",
+    "variables": [
+      {"exposant": -3, "correct": "pH = 3", "explication": "pH = −log(10⁻³) = 3 → solution acide"},
+      {"exposant": -7, "correct": "pH = 7", "explication": "pH = −log(10⁻⁷) = 7 → solution neutre"},
+      {"exposant": -11, "correct": "pH = 11", "explication": "pH = −log(10⁻¹¹) = 11 → solution basique"},
+      {"exposant": -2, "correct": "pH = 2", "explication": "pH = −log(10⁻²) = 2 → acide fort"},
+      {"exposant": -5, "correct": "pH = 5", "explication": "pH = −log(10⁻⁵) = 5 → légèrement acide"},
+      {"exposant": -9, "correct": "pH = 9", "explication": "pH = −log(10⁻⁹) = 9 → légèrement basique"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_pH"
+  },
+  {
+    "id": 33, "mat": "PC", "titre": "Demi-vie radioactive (variable)", "freq": "regulier", "difficulte": "moyen",
+    "type": "numerique_variable",
+    "template": "Un échantillon radioactif a une activité initiale de {A0} Bq et une demi-vie de {t12} jours. Quelle est l'activité après {t} jours ?",
+    "variables": [
+      {"A0": 800, "t12": 4, "t": 8, "correct": "200 Bq", "explication": "t/t½ = 8/4 = 2 demi-vies → A = 800×(1/2)² = 200 Bq"},
+      {"A0": 1000, "t12": 5, "t": 10, "correct": "250 Bq", "explication": "t/t½ = 10/5 = 2 demi-vies → A = 1000×(1/2)² = 250 Bq"},
+      {"A0": 640, "t12": 2, "t": 6, "correct": "80 Bq", "explication": "t/t½ = 6/2 = 3 demi-vies → A = 640×(1/2)³ = 80 Bq"},
+      {"A0": 1600, "t12": 8, "t": 24, "correct": "200 Bq", "explication": "t/t½ = 24/8 = 3 demi-vies → A = 1600×(1/2)³ = 200 Bq"},
+      {"A0": 500, "t12": 10, "t": 20, "correct": "125 Bq", "explication": "t/t½ = 20/10 = 2 demi-vies → A = 500×(1/2)² = 125 Bq"},
+      {"A0": 3200, "t12": 3, "t": 12, "correct": "200 Bq", "explication": "t/t½ = 12/3 = 4 demi-vies → A = 3200×(1/2)⁴ = 200 Bq"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_becquerel"
+  },
+  {
+    "id": 34, "mat": "PC", "titre": "COP pompe à chaleur (variable)", "freq": "regulier", "difficulte": "moyen",
+    "type": "numerique_variable",
+    "template": "Une pompe à chaleur consomme {W} W électriques et prélève {Qc} W à l'extérieur. Calculer le COP.",
+    "variables": [
+      {"W": 1200, "Qc": 2400, "correct": "COP = 3", "explication": "Qf = W+Qc = 3600 W → COP = 3600/1200 = 3"},
+      {"W": 1000, "Qc": 3000, "correct": "COP = 4", "explication": "Qf = 1000+3000 = 4000 W → COP = 4000/1000 = 4"},
+      {"W": 800, "Qc": 3200, "correct": "COP = 5", "explication": "Qf = 800+3200 = 4000 W → COP = 4000/800 = 5"},
+      {"W": 1500, "Qc": 3000, "correct": "COP = 3", "explication": "Qf = 1500+3000 = 4500 W → COP = 4500/1500 = 3"},
+      {"W": 2000, "Qc": 4000, "correct": "COP = 3", "explication": "Qf = 2000+4000 = 6000 W → COP = 6000/2000 = 3"},
+      {"W": 600, "Qc": 1800, "correct": "COP = 4", "explication": "Qf = 600+1800 = 2400 W → COP = 2400/600 = 4"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_COP"
+  },
+  {
+    "id": 35, "mat": "PC", "titre": "Flux thermique (variable)", "freq": "regulier", "difficulte": "moyen",
+    "type": "numerique_variable",
+    "template": "Un mur a une résistance thermique de {Rth} K/W. La différence de température entre les deux faces est {deltaT} °C. Calculer le flux thermique.",
+    "variables": [
+      {"Rth": 2.0, "deltaT": 20, "correct": "10 W", "explication": "Φ = ΔT/Rth = 20/2 = 10 W"},
+      {"Rth": 0.5, "deltaT": 25, "correct": "50 W", "explication": "Φ = ΔT/Rth = 25/0,5 = 50 W"},
+      {"Rth": 4.0, "deltaT": 40, "correct": "10 W", "explication": "Φ = ΔT/Rth = 40/4 = 10 W"},
+      {"Rth": 1.0, "deltaT": 15, "correct": "15 W", "explication": "Φ = ΔT/Rth = 15/1 = 15 W"},
+      {"Rth": 0.25, "deltaT": 20, "correct": "80 W", "explication": "Φ = ΔT/Rth = 20/0,25 = 80 W"},
+      {"Rth": 5.0, "deltaT": 35, "correct": "7 W", "explication": "Φ = ΔT/Rth = 35/5 = 7 W"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_watts"
+  },
+  {
+    "id": 36, "mat": "Maths", "titre": "Équation différentielle y'+ay=b (variable)", "freq": "chaque-annee", "difficulte": "moyen",
+    "type": "numerique_variable",
+    "template": "Résoudre y' + {a}y = {b} avec y(0) = {y0}. Quelle est la valeur limite y(+∞) ?",
+    "variables": [
+      {"a": 2, "b": 6, "y0": 1, "correct": "y(+∞) = 3", "explication": "b/a = 6/2 = 3. La solution tend vers b/a quand t→+∞"},
+      {"a": 3, "b": 9, "y0": 0, "correct": "y(+∞) = 3", "explication": "b/a = 9/3 = 3. K = 0−3 = −3 → y(t) = 3−3e^(−3t) → 3"},
+      {"a": 5, "b": 10, "y0": 4, "correct": "y(+∞) = 2", "explication": "b/a = 10/5 = 2. K = 4−2 = 2 → y(t) = 2+2e^(−5t) → 2"},
+      {"a": 1, "b": 5, "y0": 2, "correct": "y(+∞) = 5", "explication": "b/a = 5/1 = 5. K = 2−5 = −3 → y(t) = 5−3e^(−t) → 5"},
+      {"a": 4, "b": 8, "y0": 0, "correct": "y(+∞) = 2", "explication": "b/a = 8/4 = 2. K = 0−2 = −2 → y(t) = 2−2e^(−4t) → 2"},
+      {"a": 2, "b": 12, "y0": 3, "correct": "y(+∞) = 6", "explication": "b/a = 12/2 = 6. K = 3−6 = −3 → y(t) = 6−3e^(−2t) → 6"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_value"
+  },
+  {
+    "id": 37, "mat": "Maths", "titre": "Constante K de l'équation différentielle (variable)", "freq": "chaque-annee", "difficulte": "moyen",
+    "type": "numerique_variable",
+    "template": "Pour y' + {a}y = {b} avec y(0) = {y0}, calculer la constante K.",
+    "variables": [
+      {"a": 2, "b": 6, "y0": 1, "correct": "K = −2", "explication": "K = y(0)−b/a = 1−3 = −2"},
+      {"a": 3, "b": 9, "y0": 5, "correct": "K = 2", "explication": "K = y(0)−b/a = 5−3 = 2"},
+      {"a": 5, "b": 10, "y0": 0, "correct": "K = −2", "explication": "K = y(0)−b/a = 0−2 = −2"},
+      {"a": 1, "b": 4, "y0": 6, "correct": "K = 2", "explication": "K = y(0)−b/a = 6−4 = 2"},
+      {"a": 4, "b": 16, "y0": 1, "correct": "K = −3", "explication": "K = y(0)−b/a = 1−4 = −3"},
+      {"a": 2, "b": 10, "y0": 8, "correct": "K = 3", "explication": "K = y(0)−b/a = 8−5 = 3"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_value"
+  },
+  {
+    "id": 38, "mat": "Maths", "titre": "Module d'un nombre complexe (variable)", "freq": "chaque-annee", "difficulte": "facile",
+    "type": "numerique_variable",
+    "template": "Calculer le module du nombre complexe z = {a} + {b}i.",
+    "variables": [
+      {"a": 3, "b": 4, "correct": "|z| = 5", "explication": "|z| = √(3²+4²) = √(9+16) = √25 = 5 (triangle 3-4-5)"},
+      {"a": 5, "b": 12, "correct": "|z| = 13", "explication": "|z| = √(5²+12²) = √(25+144) = √169 = 13"},
+      {"a": 1, "b": 1, "correct": "|z| = √2", "explication": "|z| = √(1²+1²) = √2 ≈ 1,414"},
+      {"a": 0, "b": 7, "correct": "|z| = 7", "explication": "|z| = √(0²+7²) = √49 = 7 (imaginaire pur)"},
+      {"a": 6, "b": 8, "correct": "|z| = 10", "explication": "|z| = √(6²+8²) = √(36+64) = √100 = 10"},
+      {"a": 2, "b": 2, "correct": "|z| = 2√2", "explication": "|z| = √(2²+2²) = √8 = 2√2 ≈ 2,83"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_value"
+  },
+  {
+    "id": 39, "mat": "Maths", "titre": "Intégrale de e^(ax) (variable)", "freq": "chaque-annee", "difficulte": "facile",
+    "type": "numerique_variable",
+    "template": "Calculer ∫[0→1] e^({a}x) dx.",
+    "variables": [
+      {"a": 1, "correct": "e − 1 ≈ 1,718", "explication": "[e^x]₀¹ = e¹ − e⁰ = e − 1 ≈ 1,718"},
+      {"a": 2, "correct": "(e²−1)/2 ≈ 3,195", "explication": "[e^(2x)/2]₀¹ = e²/2 − 1/2 = (e²−1)/2 ≈ 3,195"},
+      {"a": 3, "correct": "(e³−1)/3 ≈ 6,029", "explication": "[e^(3x)/3]₀¹ = e³/3 − 1/3 = (e³−1)/3 ≈ 6,029"},
+      {"a": -1, "correct": "1 − 1/e ≈ 0,632", "explication": "[e^(−x)/(−1)]₀¹ = −e^(−1) − (−1) = 1 − 1/e ≈ 0,632"},
+      {"a": -2, "correct": "(1 − e^(−2))/2 ≈ 0,432", "explication": "[e^(−2x)/(−2)]₀¹ = (1 − e^(−2))/2 ≈ 0,432"},
+      {"a": 4, "correct": "(e⁴−1)/4 ≈ 13,40", "explication": "[e^(4x)/4]₀¹ = e⁴/4 − 1/4 = (e⁴−1)/4 ≈ 13,40"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_value"
+  },
+  {
+    "id": 40, "mat": "Maths", "titre": "Probabilité binomiale P(X=k) (variable)", "freq": "regulier", "difficulte": "moyen",
+    "type": "numerique_variable",
+    "template": "X suit une loi B({n}, {p}). Calculer E(X) et σ(X).",
+    "variables": [
+      {"n": 20, "p": 0.3, "correct": "E=6, σ≈2,05", "explication": "E=20×0,3=6 ; V=20×0,3×0,7=4,2 ; σ=√4,2≈2,05"},
+      {"n": 50, "p": 0.4, "correct": "E=20, σ≈3,46", "explication": "E=50×0,4=20 ; V=50×0,4×0,6=12 ; σ=√12≈3,46"},
+      {"n": 100, "p": 0.25, "correct": "E=25, σ≈4,33", "explication": "E=100×0,25=25 ; V=100×0,25×0,75=18,75 ; σ=√18,75≈4,33"},
+      {"n": 10, "p": 0.5, "correct": "E=5, σ≈1,58", "explication": "E=10×0,5=5 ; V=10×0,5×0,5=2,5 ; σ=√2,5≈1,58"},
+      {"n": 30, "p": 0.2, "correct": "E=6, σ≈2,19", "explication": "E=30×0,2=6 ; V=30×0,2×0,8=4,8 ; σ=√4,8≈2,19"},
+      {"n": 80, "p": 0.1, "correct": "E=8, σ≈2,68", "explication": "E=80×0,1=8 ; V=80×0,1×0,9=7,2 ; σ=√7,2≈2,68"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_value"
+  },
+  {
+    "id": 41, "mat": "SIN", "titre": "Résolution CAN n bits (variable)", "freq": "chaque-annee", "difficulte": "moyen",
+    "type": "numerique_variable",
+    "template": "Un CAN de {n} bits a une tension de référence de {Vref} V. Calculer la résolution ΔV.",
+    "variables": [
+      {"n": 8, "Vref": 5, "correct": "≈ 19,5 mV", "explication": "ΔV = 5/2⁸ = 5/256 ≈ 0,0195 V = 19,5 mV"},
+      {"n": 10, "Vref": 5, "correct": "≈ 4,9 mV", "explication": "ΔV = 5/2¹⁰ = 5/1024 ≈ 0,00488 V = 4,9 mV (Arduino)"},
+      {"n": 8, "Vref": 3.3, "correct": "≈ 12,9 mV", "explication": "ΔV = 3,3/256 ≈ 0,01289 V = 12,9 mV"},
+      {"n": 12, "Vref": 5, "correct": "≈ 1,2 mV", "explication": "ΔV = 5/2¹² = 5/4096 ≈ 0,00122 V = 1,2 mV"},
+      {"n": 10, "Vref": 3.3, "correct": "≈ 3,2 mV", "explication": "ΔV = 3,3/1024 ≈ 0,00322 V = 3,2 mV"},
+      {"n": 8, "Vref": 10, "correct": "≈ 39,1 mV", "explication": "ΔV = 10/256 ≈ 0,0391 V = 39,1 mV"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_millivolts"
+  },
+  {
+    "id": 42, "mat": "SIN", "titre": "Valeur numérique CAN (variable)", "freq": "chaque-annee", "difficulte": "moyen",
+    "type": "numerique_variable",
+    "template": "Un CAN de {n} bits, Vref = {Vref} V lit une tension de {V} V. Quelle valeur numérique N retourne-t-il ?",
+    "variables": [
+      {"n": 10, "Vref": 5, "V": 2.5, "correct": "N = 512", "explication": "N = V×2ⁿ/Vref = 2,5×1024/5 = 512"},
+      {"n": 8, "Vref": 5, "V": 2.5, "correct": "N = 128", "explication": "N = 2,5×256/5 = 128"},
+      {"n": 10, "Vref": 5, "V": 1, "correct": "N ≈ 205", "explication": "N = 1×1024/5 = 204,8 ≈ 205"},
+      {"n": 8, "Vref": 3.3, "V": 1.65, "correct": "N = 128", "explication": "N = 1,65×256/3,3 = 128 (moitié plage)"},
+      {"n": 10, "Vref": 5, "V": 3.75, "correct": "N = 768", "explication": "N = 3,75×1024/5 = 768 (3/4 de la plage)"},
+      {"n": 12, "Vref": 5, "V": 2.5, "correct": "N = 2048", "explication": "N = 2,5×4096/5 = 2048"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_integer"
+  },
+  {
+    "id": 43, "mat": "SIN", "titre": "Adresse réseau (AND bit à bit) (variable)", "freq": "chaque-annee", "difficulte": "moyen",
+    "type": "numerique_variable",
+    "template": "Une machine a l'IP {ip} avec le masque {masque}. Quelle est l'adresse réseau ?",
+    "variables": [
+      {"ip": "192.168.1.45", "masque": "255.255.255.0", "correct": "192.168.1.0", "explication": "AND bit à bit : les 3 premiers octets restent, 45 AND 0 = 0"},
+      {"ip": "10.0.5.200", "masque": "255.255.0.0", "correct": "10.0.0.0", "explication": "AND : 10 et 0 restent, 5 AND 0 = 0, 200 AND 0 = 0"},
+      {"ip": "172.16.8.100", "masque": "255.255.0.0", "correct": "172.16.0.0", "explication": "172 et 16 restent (AND 255), 8 AND 0 = 0, 100 AND 0 = 0"},
+      {"ip": "192.168.10.75", "masque": "255.255.255.128", "correct": "192.168.10.0", "explication": "75 AND 128 = 0 (car 75 < 128). Réseau : 192.168.10.0"},
+      {"ip": "192.168.10.200", "masque": "255.255.255.128", "correct": "192.168.10.128", "explication": "200 AND 128 = 128 (car 200 ≥ 128). Réseau : 192.168.10.128"},
+      {"ip": "172.20.15.50", "masque": "255.255.255.0", "correct": "172.20.15.0", "explication": "50 AND 0 = 0. Les 3 premiers octets restent inchangés."}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_ip"
+  },
+  {
+    "id": 44, "mat": "SIN", "titre": "Fréquence d'échantillonnage Shannon (variable)", "freq": "chaque-annee", "difficulte": "facile",
+    "type": "numerique_variable",
+    "template": "Un signal a une fréquence maximale de {fmax} kHz. Quelle fréquence d'échantillonnage minimale respecte Shannon ?",
+    "variables": [
+      {"fmax": 20, "correct": "fe ≥ 40 kHz", "explication": "fe ≥ 2×fmax = 2×20 = 40 kHz (CD audio : 44,1 kHz)"},
+      {"fmax": 3.4, "correct": "fe ≥ 6,8 kHz", "explication": "fe ≥ 2×3,4 = 6,8 kHz (téléphonie : 8 kHz utilisé)"},
+      {"fmax": 22, "correct": "fe ≥ 44 kHz", "explication": "fe ≥ 2×22 = 44 kHz (USB audio : 48 kHz utilisé)"},
+      {"fmax": 1, "correct": "fe ≥ 2 kHz", "explication": "fe ≥ 2×1 = 2 kHz (signal basse fréquence)"},
+      {"fmax": 50, "correct": "fe ≥ 100 kHz", "explication": "fe ≥ 2×50 = 100 kHz (signal haute fréquence)"},
+      {"fmax": 10, "correct": "fe ≥ 20 kHz", "explication": "fe ≥ 2×10 = 20 kHz"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_kHz"
+  },
+  {
+    "id": 45, "mat": "SIN", "titre": "analogRead Arduino → tension (variable)", "freq": "regulier", "difficulte": "moyen",
+    "type": "numerique_variable",
+    "template": "Un Arduino (Vref=5V, 10 bits) lit analogRead(A0) = {N}. Quelle tension correspond à cette valeur ?",
+    "variables": [
+      {"N": 512, "correct": "≈ 2,5 V", "explication": "V = 512×5/1024 = 2560/1024 ≈ 2,5 V"},
+      {"N": 1023, "correct": "≈ 5,0 V", "explication": "V = 1023×5/1024 ≈ 5,0 V (valeur max)"},
+      {"N": 256, "correct": "≈ 1,25 V", "explication": "V = 256×5/1024 = 1280/1024 ≈ 1,25 V"},
+      {"N": 768, "correct": "≈ 3,75 V", "explication": "V = 768×5/1024 = 3840/1024 ≈ 3,75 V"},
+      {"N": 204, "correct": "≈ 1,0 V", "explication": "V = 204×5/1024 ≈ 0,996 V ≈ 1,0 V"},
+      {"N": 0, "correct": "0 V", "explication": "V = 0×5/1024 = 0 V (capteur retourne 0)"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_voltage"
+  },
+  {
+    "id": 46, "mat": "2I2D", "titre": "Rendement global chaîne 2 convertisseurs (variable)", "freq": "chaque-annee", "difficulte": "facile",
+    "type": "numerique_variable",
+    "template": "Une chaîne a 2 convertisseurs : η₁ = {eta1} et η₂ = {eta2}. Calculer le rendement global.",
+    "variables": [
+      {"eta1": 0.95, "eta2": 0.80, "correct": "76%", "explication": "η = 0,95×0,80 = 0,76 = 76%"},
+      {"eta1": 0.90, "eta2": 0.85, "correct": "76,5%", "explication": "η = 0,90×0,85 = 0,765 = 76,5%"},
+      {"eta1": 0.98, "eta2": 0.92, "correct": "90,2%", "explication": "η = 0,98×0,92 = 0,9016 ≈ 90,2%"},
+      {"eta1": 0.75, "eta2": 0.80, "correct": "60%", "explication": "η = 0,75×0,80 = 0,60 = 60%"},
+      {"eta1": 0.88, "eta2": 0.90, "correct": "79,2%", "explication": "η = 0,88×0,90 = 0,792 = 79,2%"},
+      {"eta1": 0.70, "eta2": 0.70, "correct": "49%", "explication": "η = 0,70×0,70 = 0,49 = 49%"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_percent"
+  },
+  {
+    "id": 47, "mat": "2I2D", "titre": "Rendement global chaîne 3 convertisseurs (variable)", "freq": "chaque-annee", "difficulte": "moyen",
+    "type": "numerique_variable",
+    "template": "Une chaîne a 3 convertisseurs : η₁ = {eta1}, η₂ = {eta2}, η₃ = {eta3}. Calculer η_global et la puissance utile si Pa = {Pa} W.",
+    "variables": [
+      {"eta1": 0.95, "eta2": 0.85, "eta3": 0.90, "Pa": 1000, "correct": "η≈72,6% / Pu≈726 W", "explication": "η = 0,95×0,85×0,90 = 0,7268. Pu = 0,7268×1000 ≈ 726 W"},
+      {"eta1": 0.95, "eta2": 0.80, "eta3": 0.90, "Pa": 1500, "correct": "η≈68,4% / Pu≈1026 W", "explication": "η = 0,95×0,80×0,90 = 0,684. Pu = 0,684×1500 ≈ 1026 W"},
+      {"eta1": 0.98, "eta2": 0.90, "eta3": 0.85, "Pa": 2000, "correct": "η≈74,9% / Pu≈1499 W", "explication": "η = 0,98×0,90×0,85 = 0,7497. Pu = 0,7497×2000 ≈ 1499 W"},
+      {"eta1": 0.80, "eta2": 0.80, "eta3": 0.80, "Pa": 1000, "correct": "η=51,2% / Pu=512 W", "explication": "η = 0,8³ = 0,512. Pu = 512 W"},
+      {"eta1": 0.92, "eta2": 0.88, "eta3": 0.95, "Pa": 500, "correct": "η≈76,9% / Pu≈385 W", "explication": "η = 0,92×0,88×0,95 = 0,7691. Pu ≈ 385 W"},
+      {"eta1": 0.90, "eta2": 0.75, "eta3": 0.85, "Pa": 800, "correct": "η≈57,4% / Pu≈459 W", "explication": "η = 0,90×0,75×0,85 = 0,5738. Pu ≈ 459 W"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_percent"
+  },
+  {
+    "id": 48, "mat": "2I2D", "titre": "Chaleur sensible Q = mcΔT (variable)", "freq": "chaque-annee", "difficulte": "moyen",
+    "type": "numerique_variable",
+    "template": "On chauffe {m} kg de {fluide} de {T1}°C à {T2}°C. Calculer l'énergie nécessaire (c = {c} J/(kg·K)).",
+    "variables": [
+      {"m": 5, "fluide": "eau", "T1": 20, "T2": 80, "c": 4200, "correct": "1 260 kJ", "explication": "Q = 5×4200×60 = 1 260 000 J = 1 260 kJ"},
+      {"m": 10, "fluide": "eau", "T1": 10, "T2": 100, "c": 4200, "correct": "3 780 kJ", "explication": "Q = 10×4200×90 = 3 780 000 J = 3 780 kJ"},
+      {"m": 2, "fluide": "eau", "T1": 20, "T2": 70, "c": 4200, "correct": "420 kJ", "explication": "Q = 2×4200×50 = 420 000 J = 420 kJ"},
+      {"m": 3, "fluide": "aluminium", "T1": 20, "T2": 120, "c": 900, "correct": "270 kJ", "explication": "Q = 3×900×100 = 270 000 J = 270 kJ"},
+      {"m": 1, "fluide": "eau", "T1": 15, "T2": 65, "c": 4200, "correct": "210 kJ", "explication": "Q = 1×4200×50 = 210 000 J = 210 kJ"},
+      {"m": 8, "fluide": "eau", "T1": 5, "T2": 55, "c": 4200, "correct": "1 680 kJ", "explication": "Q = 8×4200×50 = 1 680 000 J = 1 680 kJ"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_kJ"
+  },
+  {
+    "id": 49, "mat": "2I2D", "titre": "Bilan énergie – puissance utile et pertes (variable)", "freq": "chaque-annee", "difficulte": "facile",
+    "type": "numerique_variable",
+    "template": "Un moteur absorbe {Pa} W avec un rendement de {eta}. Calculer la puissance utile et les pertes.",
+    "variables": [
+      {"Pa": 2000, "eta": 0.75, "correct": "Pu=1500W / Pertes=500W", "explication": "Pu = 2000×0,75 = 1500 W ; Pertes = 2000−1500 = 500 W"},
+      {"Pa": 1000, "eta": 0.80, "correct": "Pu=800W / Pertes=200W", "explication": "Pu = 1000×0,80 = 800 W ; Pertes = 200 W"},
+      {"Pa": 500, "eta": 0.60, "correct": "Pu=300W / Pertes=200W", "explication": "Pu = 500×0,60 = 300 W ; Pertes = 200 W"},
+      {"Pa": 3000, "eta": 0.85, "correct": "Pu=2550W / Pertes=450W", "explication": "Pu = 3000×0,85 = 2550 W ; Pertes = 450 W"},
+      {"Pa": 1500, "eta": 0.90, "correct": "Pu=1350W / Pertes=150W", "explication": "Pu = 1500×0,90 = 1350 W ; Pertes = 150 W"},
+      {"Pa": 800, "eta": 0.70, "correct": "Pu=560W / Pertes=240W", "explication": "Pu = 800×0,70 = 560 W ; Pertes = 240 W"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_watts"
+  },
+  {
+    "id": 50, "mat": "PC", "titre": "Résistance thermique d'un mur (variable)", "freq": "regulier", "difficulte": "moyen",
+    "type": "numerique_variable",
+    "template": "Un mur d'épaisseur {e} m, de conductivité {lambda} W/(m·K) et de surface {S} m². Calculer Rth.",
+    "variables": [
+      {"e": 0.2, "lambda": 1.0, "S": 10, "correct": "Rth = 0,02 K/W", "explication": "Rth = e/(λ×S) = 0,2/(1,0×10) = 0,02 K/W"},
+      {"e": 0.3, "lambda": 0.5, "S": 15, "correct": "Rth = 0,04 K/W", "explication": "Rth = 0,3/(0,5×15) = 0,3/7,5 = 0,04 K/W"},
+      {"e": 0.1, "lambda": 2.0, "S": 20, "correct": "Rth = 0,0025 K/W", "explication": "Rth = 0,1/(2,0×20) = 0,1/40 = 0,0025 K/W"},
+      {"e": 0.08, "lambda": 0.04, "S": 12, "correct": "Rth ≈ 0,167 K/W", "explication": "Rth = 0,08/(0,04×12) = 0,08/0,48 ≈ 0,167 K/W (isolant)"},
+      {"e": 0.25, "lambda": 0.8, "S": 25, "correct": "Rth = 0,0125 K/W", "explication": "Rth = 0,25/(0,8×25) = 0,25/20 = 0,0125 K/W"},
+      {"e": 0.15, "lambda": 1.5, "S": 10, "correct": "Rth = 0,01 K/W", "explication": "Rth = 0,15/(1,5×10) = 0,15/15 = 0,01 K/W"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_value"
+  },
+  {
+    "id": 51, "mat": "Maths", "titre": "Primitive de cos(ax) – calcul intégrale définie (variable)", "freq": "chaque-annee", "difficulte": "moyen",
+    "type": "numerique_variable",
+    "template": "Calculer ∫[0→π/{k}] cos({a}x) dx.",
+    "variables": [
+      {"a": 1, "k": 2, "correct": "1", "explication": "[sin(x)]₀^(π/2) = sin(π/2)−sin(0) = 1−0 = 1"},
+      {"a": 2, "k": 4, "correct": "1/2", "explication": "[sin(2x)/2]₀^(π/4) = sin(π/2)/2−0 = 1/2"},
+      {"a": 3, "k": 6, "correct": "1/3", "explication": "[sin(3x)/3]₀^(π/6) = sin(π/2)/3−0 = 1/3"},
+      {"a": 1, "k": 1, "correct": "0", "explication": "[sin(x)]₀^π = sin(π)−sin(0) = 0−0 = 0"},
+      {"a": 2, "k": 2, "correct": "0", "explication": "[sin(2x)/2]₀^(π/2) = sin(π)/2−0 = 0"},
+      {"a": 4, "k": 8, "correct": "1/4", "explication": "[sin(4x)/4]₀^(π/8) = sin(π/2)/4 = 1/4"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_fraction"
+  },
+  {
+    "id": 52, "mat": "Maths", "titre": "Dérivée de e^(ax+b) (variable)", "freq": "regulier", "difficulte": "facile",
+    "type": "numerique_variable",
+    "template": "Calculer la dérivée de f(x) = e^({a}x + {b}).",
+    "variables": [
+      {"a": 3, "b": 1, "correct": "f'(x) = 3e^(3x+1)", "explication": "u = 3x+1, u' = 3 → f'(x) = 3×e^(3x+1)"},
+      {"a": -2, "b": 0, "correct": "f'(x) = −2e^(−2x)", "explication": "u = −2x, u' = −2 → f'(x) = −2e^(−2x)"},
+      {"a": 5, "b": -3, "correct": "f'(x) = 5e^(5x−3)", "explication": "u = 5x−3, u' = 5 → f'(x) = 5e^(5x−3)"},
+      {"a": 1, "b": 2, "correct": "f'(x) = e^(x+2)", "explication": "u = x+2, u' = 1 → f'(x) = 1×e^(x+2) = e^(x+2)"},
+      {"a": -1, "b": 4, "correct": "f'(x) = −e^(−x+4)", "explication": "u = −x+4, u' = −1 → f'(x) = −e^(−x+4)"},
+      {"a": 7, "b": 2, "correct": "f'(x) = 7e^(7x+2)", "explication": "u = 7x+2, u' = 7 → f'(x) = 7e^(7x+2)"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_expression"
+  },
+  {
+    "id": 53, "mat": "2I2D", "titre": "Rendement chaîne 4 convertisseurs (variable)", "freq": "regulier", "difficulte": "difficile",
+    "type": "numerique_variable",
+    "template": "Chaîne : η₁={eta1}, η₂={eta2}, η₃={eta3}, η₄={eta4}. Pa={Pa} W. Calculer η_global et Pu.",
+    "variables": [
+      {"eta1": 0.98, "eta2": 0.95, "eta3": 0.90, "eta4": 0.85, "Pa": 1000, "correct": "η≈71,1% / Pu≈711 W", "explication": "η = 0,98×0,95×0,90×0,85 = 0,7107. Pu ≈ 711 W"},
+      {"eta1": 0.90, "eta2": 0.90, "eta3": 0.90, "eta4": 0.90, "Pa": 2000, "correct": "η≈65,6% / Pu≈1312 W", "explication": "η = 0,9⁴ = 0,6561. Pu ≈ 1312 W"},
+      {"eta1": 0.95, "eta2": 0.88, "eta3": 0.92, "eta4": 0.80, "Pa": 500, "correct": "η≈61,5% / Pu≈308 W", "explication": "η = 0,95×0,88×0,92×0,80 = 0,6149. Pu ≈ 308 W"},
+      {"eta1": 0.99, "eta2": 0.95, "eta3": 0.88, "eta4": 0.90, "Pa": 3000, "correct": "η≈74,5% / Pu≈2234 W", "explication": "η = 0,99×0,95×0,88×0,90 = 0,7445. Pu ≈ 2234 W"},
+      {"eta1": 0.80, "eta2": 0.80, "eta3": 0.80, "eta4": 0.80, "Pa": 1000, "correct": "η≈41% / Pu≈410 W", "explication": "η = 0,8⁴ = 0,4096 ≈ 41%. Pu ≈ 410 W"},
+      {"eta1": 0.97, "eta2": 0.93, "eta3": 0.91, "eta4": 0.87, "Pa": 1500, "correct": "η≈69,9% / Pu≈1049 W", "explication": "η = 0,97×0,93×0,91×0,87 = 0,6993. Pu ≈ 1049 W"}
+    ],
+    "options_template": ["{correct}", "{faux1}", "{faux2}", "{faux3}"],
+    "faux_generator": "vary_percent"
+  }
+]

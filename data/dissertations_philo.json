@@ -1,0 +1,278 @@
+[
+  {
+    "id": 1,
+    "sujet": "La démocratie est-elle le meilleur régime politique ?",
+    "type": "dissertation",
+    "notions": ["État", "Liberté", "Devoir", "Justice"],
+    "plan": {
+      "intro": "Définir : démocratie (demos = peuple, kratos = pouvoir) ; régime politique (organisation du pouvoir). Tension : la démocratie est célébrée comme idéal mais Platon la critiquait comme régime de l'ignorance. Problématique : La démocratie garantit-elle réellement un gouvernement juste, ou ses défauts la rendent-ils inférieure à d'autres formes de pouvoir ? Annonce : P1 : avantages de la démocratie / P2 : ses limites / P3 : une démocratie à perfectionner.",
+      "partie1": {
+        "titre": "La démocratie garantit les libertés fondamentales et l'égalité en droit",
+        "arg1": "Le principe de souveraineté populaire assure que les lois émanent de la volonté du peuple, et non d'un souverain arbitraire.",
+        "auteur1": "Rousseau",
+        "ref1": "Du Contrat Social, 1762",
+        "exemple1": "La Révolution française de 1789 illustre comment le peuple renverse la tyrannie au nom de la volonté générale.",
+        "arg2": "La séparation des pouvoirs prévient la tyrannie en empêchant toute concentration du pouvoir dans une seule main.",
+        "auteur2": "Montesquieu",
+        "ref2": "L'Esprit des lois, 1748",
+        "exemple2": "La Constitution américaine (1787) incarne ce principe : Congrès / Président / Cour Suprême se contrôlent mutuellement.",
+        "transition": "Mais la démocratie n'est pas exempte de défauts graves que ses propres théoriciens ont signalés."
+      },
+      "partie2": {
+        "titre": "Les limites et les dangers inhérents à la démocratie",
+        "arg1": "La démocratie peut se transformer en tyrannie de la majorité, écrasant les minorités au nom du nombre.",
+        "auteur1": "Tocqueville",
+        "ref1": "De la Démocratie en Amérique, 1835",
+        "exemple1": "Les lois de ségrégation aux États-Unis (Jim Crow Laws) ont été votées démocratiquement par des majorités blanches contre les Noirs.",
+        "arg2": "Platon critique la démocratie : elle donne le pouvoir à des ignorants, dominés par leurs passions et non par la raison.",
+        "auteur2": "Platon",
+        "ref2": "La République, Livre VIII",
+        "exemple2": "L'élection de démagogues populistes dans des démocraties contemporaines illustre ce risque (montée des extrêmes en Europe).",
+        "transition": "Ces limites ne condamnent pas la démocratie mais invitent à la penser autrement, comme un régime perfectible."
+      },
+      "partie3": {
+        "titre": "Une démocratie à améliorer et à pratiquer activement",
+        "arg1": "La démocratie n'est pas un acquis figé mais un régime qui exige participation, éducation et contre-pouvoirs permanents.",
+        "auteur1": "Tocqueville",
+        "ref1": "De la Démocratie en Amérique, T2, 1840",
+        "exemple1": "Les associations civiles, la presse libre et la décentralisation proposées par Tocqueville comme remèdes à l'individualisme démocratique.",
+        "arg2": "Les institutions démocratiques contemporaines intègrent des protections : droits fondamentaux, justice constitutionnelle, droits des minorités.",
+        "auteur2": "Montesquieu",
+        "ref2": "L'Esprit des lois",
+        "exemple2": "Le Conseil constitutionnel français (1958) ou la Cour Suprême USA peuvent invalider des lois majoritaires contraires aux droits fondamentaux.",
+        "transition": "En ce sens, la démocratie n'est pas le régime parfait mais, comme Churchill l'a formulé, 'le moins mauvais des régimes'."
+      },
+      "conclusion": "La démocratie présente des avantages décisifs : légitimité populaire, liberté, séparation des pouvoirs. Mais elle comporte des risques réels : tyrannie de la majorité, démagogie, individualisme. Elle n'est donc pas le meilleur régime en valeur absolue, mais le régime le plus perfectible, à condition d'être activement entretenu par des citoyens éduqués et engagés. Ouverture : peut-on alors parler de démocratie participative ou délibérative comme dépassement de la simple démocratie représentative ?"
+    }
+  },
+  {
+    "id": 2,
+    "sujet": "Être libre, est-ce faire ce que l'on veut ?",
+    "type": "dissertation",
+    "notions": ["Liberté", "Conscience", "Devoir", "Nature"],
+    "plan": {
+      "intro": "Définir : liberté (absence de contrainte ? capacité d'agir selon sa volonté ?) ; vouloir (désir spontané, caprice ou volonté réfléchie ?). Tension : la liberté semble être exactement cela — faire ce qu'on veut — mais peut-on vraiment parler de liberté si on est esclave de ses désirs ? Problématique : La liberté se réduit-elle à la satisfaction des désirs ou suppose-t-elle au contraire une maîtrise de soi ? Annonce : P1 : liberté comme absence de contrainte extérieure / P2 : les contraintes internes limitent la vraie liberté / P3 : la liberté comme autonomie rationnelle.",
+      "partie1": {
+        "titre": "Première acception : la liberté comme absence de contrainte extérieure",
+        "arg1": "Dans un sens courant, est libre celui que rien n'empêche d'agir selon ses désirs. C'est la liberté négative.",
+        "auteur1": "Hobbes",
+        "ref1": "Le Léviathan, 1651",
+        "exemple1": "Un homme en prison n'est pas libre ; relâché, il retrouve sa liberté de mouvement et d'action.",
+        "arg2": "L'état de nature est l'état de liberté totale : chacun peut tout faire, selon Rousseau.",
+        "auteur2": "Rousseau",
+        "ref2": "Du Contrat Social, 1762",
+        "exemple2": "L'enfant qui fait ce qui lui plaît sans règle sociale semble 'libre' au sens immédiat.",
+        "transition": "Mais cette liberté sans limites n'est-elle pas une illusion ? Ne sommes-nous pas esclaves de nos passions ?"
+      },
+      "partie2": {
+        "titre": "Les désirs peuvent être une forme d'esclavage intérieur",
+        "arg1": "Celui qui obéit à ses passions, ses pulsions, ses habitudes agit-il vraiment librement ? Il est déterminé de l'intérieur.",
+        "auteur1": "Spinoza",
+        "ref1": "L'Éthique, 1677",
+        "exemple1": "L'homme dominé par la colère ou la jalousie n'est pas libre : il subit ses affects sans les contrôler.",
+        "arg2": "Sartre montre que nous fuyons parfois notre liberté (mauvaise foi) pour ne pas assumer la responsabilité de nos choix.",
+        "auteur2": "Sartre",
+        "ref2": "L'Être et le Néant, 1943",
+        "exemple2": "Le garçon de café qui joue à être garçon de café : il se cache derrière un rôle pour éviter la liberté terrifiante.",
+        "transition": "Si la liberté n'est ni l'absence de contrainte ni la satisfaction des désirs, qu'est-elle alors ?"
+      },
+      "partie3": {
+        "titre": "La liberté véritable est l'autonomie de la raison",
+        "arg1": "Être libre, c'est agir selon la loi que l'on se donne à soi-même par la raison, et non selon les caprices ou les pulsions.",
+        "auteur1": "Kant",
+        "ref1": "Fondements de la métaphysique des mœurs, 1785",
+        "exemple1": "L'agent moral qui résiste à la tentation par principe moral est plus libre que celui qui cède à chaque désir.",
+        "arg2": "Pour Rousseau, la liberté civile (obéir à la loi qu'on s'est soi-même donnée) est supérieure à la liberté naturelle.",
+        "auteur2": "Rousseau",
+        "ref2": "Du Contrat Social, 1762",
+        "exemple2": "Le citoyen qui respecte les lois de la République à la création desquelles il a participé est libre car il obéit à lui-même.",
+        "transition": "Ainsi la liberté n'est pas l'arbitraire mais la capacité de se gouverner soi-même par la raison."
+      },
+      "conclusion": "Être libre ne se réduit pas à faire ce que l'on veut au sens des désirs immédiats : on risquerait de confondre liberté et caprice, voire esclavage des passions. La vraie liberté est une conquête : elle suppose de soumettre les désirs à la raison et de se donner à soi-même ses propres lois. Ouverture : peut-on alors être libre dans une société ? Le droit et la loi sont-ils des obstacles à la liberté ou au contraire ses conditions de possibilité ?"
+    }
+  },
+  {
+    "id": 3,
+    "sujet": "La technique nous rend-elle plus libres ?",
+    "type": "dissertation",
+    "notions": ["Liberté", "Nature", "Science", "Travail"],
+    "plan": {
+      "intro": "Définir : technique (ensemble des procédés humains visant à transformer le monde) ; liberté (capacité d'agir sans contrainte, autonomie). Tension : la technique semble augmenter nos capacités d'agir (donc la liberté) mais certains dénoncent une aliénation technique. Problématique : La technique est-elle un instrument d'émancipation ou produit-elle de nouvelles formes de dépendance ? Annonce : P1 : la technique comme émancipation / P2 : la technique comme aliénation / P3 : une technique maîtrisée, condition d'une liberté accrue.",
+      "partie1": {
+        "titre": "La technique libère l'homme de ses contraintes naturelles",
+        "arg1": "La technique permet à l'homme de s'affranchir des limites de son corps et de la nature : maladie, distance, froid, faim.",
+        "auteur1": "Descartes",
+        "ref1": "Discours de la méthode, 1637",
+        "exemple1": "La médecine moderne (vaccins, chirurgie) libère l'homme de la maladie et prolonge sa vie.",
+        "arg2": "En réduisant le travail pénible et répétitif, l'automatisation libère du temps pour des activités épanouissantes.",
+        "auteur2": "Marx",
+        "ref2": "Manuscrits de 1844",
+        "exemple2": "Les machines agricoles ont libéré des millions de paysans d'un travail éreintant, permettant l'essor de l'éducation et du loisir.",
+        "transition": "Mais cette libération n'est-elle pas ambiguë ? La technique ne crée-t-elle pas de nouvelles dépendances ?"
+      },
+      "partie2": {
+        "titre": "La technique peut créer de nouvelles formes d'aliénation",
+        "arg1": "L'homme peut devenir dépendant de la technique, au point de ne plus savoir vivre sans elle.",
+        "auteur1": "Heidegger",
+        "ref1": "La Question de la technique, 1954",
+        "exemple1": "Les smartphones : instrument de liberté ou cage numérique ? L'addiction aux réseaux sociaux aliène l'attention et la pensée.",
+        "arg2": "La technique industrielle peut réduire l'ouvrier à un rôle de rouage, lui ôtant toute créativité et autonomie.",
+        "auteur2": "Marx",
+        "ref2": "Le Capital, 1867",
+        "exemple2": "Le travail à la chaîne (taylorisme, fordisme) : gestes répétitifs, parcellisation du travail → aliénation de l'être humain.",
+        "transition": "La question n'est donc pas tant la technique en elle-même que la façon dont l'homme la maîtrise et l'oriente."
+      },
+      "partie3": {
+        "titre": "La liberté par la technique suppose une maîtrise éthique et politique",
+        "arg1": "La technique n'est ni bonne ni mauvaise en soi : c'est l'usage social et politique qui détermine si elle libère ou aliène.",
+        "auteur1": "Ellul",
+        "ref1": "La Technique ou l'Enjeu du siècle, 1954",
+        "exemple1": "Internet peut être instrument de savoir et de liberté (printemps arabe) ou de surveillance de masse (régimes autoritaires).",
+        "arg2": "L'éducation technique et la responsabilité citoyenne permettent de choisir les technologies au service de l'humanité.",
+        "auteur2": "Descartes",
+        "ref2": "Discours de la méthode",
+        "exemple2": "Le mouvement Right to Repair (droit à la réparation) : reconquérir la maîtrise sur les objets techniques contre l'obsolescence programmée.",
+        "transition": "La technique peut donc être libératrice à condition que l'homme reste son maître et non son esclave."
+      },
+      "conclusion": "La technique est un puissant vecteur de liberté en libérant l'homme des contraintes naturelles. Mais elle comporte des risques d'aliénation lorsqu'elle échappe à la maîtrise humaine ou qu'elle est utilisée pour dominer. La vraie question est celle du gouvernement de la technique : qui décide de son développement et à quelles fins ? Ouverture : une société techniquement avancée peut-elle se permettre de ne pas interroger l'horizon éthique de ses innovations ?"
+    }
+  },
+  {
+    "id": 4,
+    "sujet": "Le bonheur est-il affaire privée ?",
+    "type": "dissertation",
+    "notions": ["Bonheur", "Liberté", "État", "Autrui"],
+    "plan": {
+      "intro": "Définir : bonheur (état durable de satisfaction, distinction plaisir immédiat / bonheur durable) ; affaire privée (qui ne concerne que soi, sphère intime hors de l'intervention d'autrui ou de l'État). Tension : chacun semble être le seul juge de son bonheur (subjectivité) mais nos conditions de bonheur dépendent du collectif (éducation, santé, société). Problématique : Le bonheur est-il une quête purement individuelle ou est-il aussi conditionné par le politique et le social ? Plan : P1 : bonheur = choix individuel / P2 : bonheur dépend du collectif / P3 : tension entre liberté de bonheur et politique du bonheur.",
+      "partie1": {
+        "titre": "Le bonheur relève bien de la sphère individuelle et de la liberté personnelle",
+        "arg1": "Chacun a une conception propre du bonheur : le définir serait imposer une vision de la bonne vie.",
+        "auteur1": "Mill",
+        "ref1": "De la liberté, 1859",
+        "exemple1": "Le principe de non-nuisance de Mill : l'État ne peut intervenir dans la sphère privée tant qu'on ne nuit pas à autrui.",
+        "arg2": "Les épicuriens insistent sur la maîtrise personnelle du désir comme chemin vers le bonheur : c'est une ascèse individuelle.",
+        "auteur2": "Épicure",
+        "ref2": "Lettre à Ménécée",
+        "exemple2": "La retraite dans le jardin d'Épicure : se retirer de la vie politique pour cultiver l'amitié et la philosophie.",
+        "transition": "Pourtant, peut-on être heureux seul, hors de toute société ?"
+      },
+      "partie2": {
+        "titre": "Le bonheur est conditionné par le collectif et les structures sociales",
+        "arg1": "L'homme est un animal social : son bonheur dépend des relations à autrui et des conditions matérielles collectives.",
+        "auteur1": "Aristote",
+        "ref1": "Éthique à Nicomaque",
+        "exemple1": "La santé publique, l'éducation, la sécurité : conditions collectives sans lesquelles le bonheur individuel reste inaccessible.",
+        "arg2": "Marx montre que les conditions économiques déterminent largement les possibilités de bonheur : l'aliénation rend impossible l'épanouissement.",
+        "auteur2": "Marx",
+        "ref2": "Manuscrits de 1844",
+        "exemple2": "Un ouvrier du XIXe siècle travaillant 14h/jour dans des conditions insalubres ne peut pas atteindre le bonheur d'Épicure.",
+        "transition": "Faut-il alors confier à l'État le soin d'assurer le bonheur des citoyens ?"
+      },
+      "partie3": {
+        "titre": "La tension entre bonheur privé et politiques du bonheur",
+        "arg1": "L'État peut créer des conditions favorables au bonheur (welfare state) sans imposer une conception uniforme du bonheur.",
+        "auteur1": "Rousseau",
+        "ref1": "Du Contrat Social",
+        "exemple1": "Les États-providence (santé, éducation, retraite) créent un socle de sécurité qui libère les individus pour leur quête personnelle du bonheur.",
+        "arg2": "Mais prétendre imposer le bonheur collectif mène au totalitarisme : le paternalisme d'État peut nier la liberté individuelle.",
+        "auteur2": "Tocqueville",
+        "ref2": "De la Démocratie en Amérique",
+        "exemple2": "Les régimes totalitaires du XXe siècle (soviétisme) ont prétendu construire le bonheur collectif en niant la liberté individuelle.",
+        "transition": "Le bonheur est donc privé dans sa définition mais public dans ses conditions de possibilité."
+      },
+      "conclusion": "Le bonheur est affaire privée en ce que chacun est seul à savoir ce qui le rend vraiment heureux. Mais cette quête individuelle dépend de conditions collectives : paix, santé, éducation, liberté. Le rôle de la société et de l'État n'est pas de définir le bonheur mais de créer les conditions qui permettent à chacun de le poursuivre. Ouverture : peut-on mesurer le bonheur collectif d'une société, et si oui, doit-il devenir un objectif politique au même titre que la croissance économique ?"
+    }
+  },
+  {
+    "id": 5,
+    "sujet": "Le travail est-il une valeur ?",
+    "type": "dissertation",
+    "notions": ["Travail", "Liberté", "Bonheur", "Nature"],
+    "plan": {
+      "intro": "Définir : travail (transformation de la nature par l'homme pour satisfaire ses besoins ; aussi : emploi salarié) ; valeur (ce qui est estimé, moralement ou économiquement important). Tension : le travail est traditionnellement perçu comme valeur morale (dignité) mais aussi comme contrainte douloureuse dont on cherche à s'affranchir. Problématique : Le travail est-il source d'épanouissement humain ou aliénation à fuir ? Plan : P1 : le travail comme valeur positive / P2 : le travail comme contrainte aliénante / P3 : vers une redéfinition du rapport au travail.",
+      "partie1": {
+        "titre": "Le travail comme valeur : émancipation et réalisation de soi",
+        "arg1": "Par le travail, l'homme transforme la nature et s'y reconnaît : c'est l'expression de sa liberté créatrice.",
+        "auteur1": "Hegel",
+        "ref1": "Phénoménologie de l'Esprit, 1807",
+        "exemple1": "L'artisan qui façonne un objet : il exprime dans la matière sa pensée, son savoir-faire, son identité.",
+        "arg2": "Le travail donne une dignité sociale et un sentiment d'utilité ; l'oisiveté, au contraire, peut mener au désœuvrement.",
+        "auteur2": "Kant",
+        "ref2": "Métaphysique des mœurs",
+        "exemple2": "Les études montrent que les retraités actifs (bénévolat, projets) vivent plus longtemps et mieux que ceux en état d'inactivité complète.",
+        "transition": "Pourtant, le travail salarié tel qu'il existe dans nos sociétés est-il vraiment émancipateur ?"
+      },
+      "partie2": {
+        "titre": "Le travail salarié peut aliéner et réduire l'être humain",
+        "arg1": "Dans le système capitaliste, le travailleur est séparé du produit de son travail et de lui-même : c'est l'aliénation.",
+        "auteur1": "Marx",
+        "ref1": "Manuscrits de 1844",
+        "exemple1": "L'ouvrier à la chaîne de Ford répète le même geste des milliers de fois : il est réduit à un rôle de rouage, non à un créateur.",
+        "arg2": "Le travail peut être source de souffrance physique et psychique : burn-out, pénibilité, chômage.",
+        "auteur2": "Dejours",
+        "ref2": "Souffrance en France, 1998",
+        "exemple2": "Les risques psychosociaux au travail (RPS) sont devenus un enjeu de santé publique majeur dans les sociétés contemporaines.",
+        "transition": "Ces critiques invitent à repenser ce que nous voulons du travail et de sa place dans nos vies."
+      },
+      "partie3": {
+        "titre": "Redéfinir le travail : vers un travail choisi, créateur et équitablement partagé",
+        "arg1": "La distinction entre travail contraint et travail choisi est décisive : ce qui a valeur, c'est l'activité librement exercée.",
+        "auteur1": "Arendt",
+        "ref1": "Condition de l'homme moderne, 1958",
+        "exemple1": "Arendt distingue le labour (besogne pénible), le work (œuvre durable) et l'action (engagement politique) — seuls work et action sont pleinement valorisants.",
+        "arg2": "La réduction du temps de travail et le revenu universel sont débattus comme moyens de libérer du temps pour d'autres formes d'activité.",
+        "auteur2": "Russell",
+        "ref2": "Éloge de l'oisiveté, 1932",
+        "exemple2": "Les entreprises qui expérimentent la semaine de 4 jours observent une hausse de la productivité ET du bien-être.",
+        "transition": "Le travail a donc de la valeur, mais cette valeur dépend des conditions dans lesquelles il est exercé."
+      },
+      "conclusion": "Le travail est une valeur ambivalente : il peut être source d'épanouissement, de dignité et de lien social lorsqu'il est librement choisi et créateur. Mais il peut aussi aliéner et détruire lorsqu'il est contraint, répétitif et dénué de sens. La vraie question n'est pas 'faut-il travailler ?' mais 'dans quelles conditions ?' Ouverture : l'automatisation et l'IA vont-elles libérer l'homme du travail ou créer un vide existentiel et social ?"
+    }
+  },
+  {
+    "id": 6,
+    "sujet": "Peut-on tout dire ?",
+    "type": "dissertation",
+    "notions": ["Liberté", "Devoir", "Autrui", "État"],
+    "plan": {
+      "intro": "Définir : 'tout dire' (liberté d'expression totale, sans censure ni limite) ; les enjeux : liberté de parole vs responsabilité des mots. Tension : la liberté d'expression est fondamentale en démocratie, mais certaines paroles nuisent, blessent ou mettent en danger. Problématique : La liberté de parole est-elle absolue ou suppose-t-elle des limites pour protéger la dignité et la cohésion sociale ? Plan : P1 : défense de la liberté d'expression / P2 : les limites nécessaires / P3 : distinguer liberté d'expression et abus de langage.",
+      "partie1": {
+        "titre": "La liberté d'expression est un droit fondamental indispensable à la démocratie",
+        "arg1": "Sans liberté de parole, il n'y a pas de débat public possible, donc pas de vraie démocratie.",
+        "auteur1": "Mill",
+        "ref1": "De la liberté, 1859",
+        "exemple1": "Mill défend la liberté d'expression même pour les idées fausses : le débat contradictoire est le seul moyen de faire émerger la vérité.",
+        "arg2": "La censure est toujours suspecte : qui décide de ce qu'il est permis de dire ? Le pouvoir censure d'abord ce qui le dérange.",
+        "auteur2": "Voltaire",
+        "ref2": "Dictionnaire philosophique, 1764",
+        "exemple2": "Sous l'Ancien Régime, les philosophes des Lumières étaient censurés : Voltaire exilé, Diderot emprisonné. Pourtant leurs idées ont libéré l'humanité.",
+        "transition": "Mais peut-on vraiment tout dire sans conséquences ? Les mots ont un pouvoir réel qui peut blesser ou détruire."
+      },
+      "partie2": {
+        "titre": "Les mots peuvent blesser, discriminer et mettre en danger : des limites sont nécessaires",
+        "arg1": "Les discours de haine, la diffamation, l'incitation à la violence ne sont pas de simples opinions mais des actes aux effets réels.",
+        "auteur1": "Austin",
+        "ref1": "Quand dire c'est faire, 1962",
+        "exemple1": "Les discours anti-sémites en Allemagne nazie n'étaient pas que des 'mots' : ils ont préparé la Shoah en déshumanisant les Juifs.",
+        "arg2": "Le mensonge public, la désinformation, les fake news menacent la démocratie en empoisonnant l'espace public.",
+        "auteur2": "Arendt",
+        "ref2": "Du mensonge en politique, 1972",
+        "exemple2": "La propagation de fausses informations sur les vaccins ou les élections représente une menace pour la santé publique et la démocratie.",
+        "transition": "Mais qui fixe ces limites, et selon quels critères, sans tomber dans la censure arbitraire ?"
+      },
+      "partie3": {
+        "titre": "Des limites légitimes à la parole : la distinction entre liberté d'expression et abus",
+        "arg1": "La liberté d'expression n'est pas absolue : elle cesse là où elle porte atteinte à la dignité, à la sécurité ou aux droits d'autrui.",
+        "auteur1": "Montesquieu",
+        "ref1": "L'Esprit des lois",
+        "exemple1": "Le droit français distingue : opinion protégée (même choquante) vs discours de haine (incitation à la discrimination, appel à la violence) — puni par la loi.",
+        "arg2": "La responsabilité de la parole publique est d'autant plus grande que l'on a une tribune importante.",
+        "auteur2": "Sartre",
+        "ref2": "L'existentialisme est un humanisme, 1946",
+        "exemple2": "Un journaliste, un politicien, un influenceur touchant des millions de personnes ont une responsabilité morale supérieure à celle d'un individu isolé.",
+        "transition": "Ainsi, 'tout dire' est moins une question de droit absolu qu'une question de responsabilité morale et civique."
+      },
+      "conclusion": "La liberté d'expression est un pilier de la démocratie et doit être défendue avec vigueur contre toute censure arbitraire. Mais elle n'est pas absolue : certaines paroles (haine, mensonge, incitation) causent des torts réels et méritent des limites légales et morales. L'enjeu est de tracer cette frontière sans arbitraire. Ouverture : à l'ère des réseaux sociaux où chacun est à la fois émetteur et récepteur, comment réguler la parole publique tout en préservant la liberté de penser ?"
+    }
+  }
+]
