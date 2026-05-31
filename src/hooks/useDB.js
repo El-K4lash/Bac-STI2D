@@ -21,6 +21,15 @@ function initDB(prenom) {
   try {
     const saved = localStorage.getItem(DB_KEY);
     if (saved) return JSON.parse(saved);
+    // Migration : si données dans l'ancien format sans login, les récupérer
+    const legacy = localStorage.getItem('bac_sti2d_userdata');
+    if (legacy) {
+      const parsed = JSON.parse(legacy);
+      localStorage.setItem(DB_KEY, legacy);
+      localStorage.removeItem('bac_sti2d_userdata');
+      console.log('Migration données legacy vers', DB_KEY);
+      return parsed;
+    }
   } catch (e) {
     console.warn('Erreur lecture localStorage:', e);
   }
