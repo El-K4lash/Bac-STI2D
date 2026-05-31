@@ -48,7 +48,7 @@ export default function VeilleExamen({ dbData, userDB, setPage }) {
   const exosARevoirData = useMemo(() => {
     return dbData.exercices
       .filter(e => matsExam.includes(e.mat))
-      .filter(e => !db.exoDone[e.id]?.correct)
+      .filter(e => db.exoDone[e.id] && !db.exoDone[e.id].correct) // tenté ET raté
       .sort((a, b) => (b.freq === 'chaque-annee' ? 1 : 0) - (a.freq === 'chaque-annee' ? 1 : 0))
       .slice(0, 8)
   }, [matsExam])
@@ -68,10 +68,8 @@ export default function VeilleExamen({ dbData, userDB, setPage }) {
   // Flashcards à revoir
   const flashARevoirCount = dbData.flashcards
     .filter(f => matsExam.includes(f.mat))
-    .filter(f => {
-      const sm = db.smData[f.id]
-      return !sm || sm.repetitions === 0 || (db.flashcardsMissed || []).includes(f.id)
-    }).length
+    .filter(f => (db.flashcardsMissed || []).includes(f.id)) // uniquement celles marquées "pas su"
+    .length
 
   if (exams.length === 0) {
     return (
