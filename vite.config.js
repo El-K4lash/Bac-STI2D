@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/bac-sti2d/',
+  base: '/Bac-STI2D/',
 })
